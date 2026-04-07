@@ -1,0 +1,35 @@
+import { useSelector } from "react-redux";
+import clsx from "clsx";
+
+const PhotoAbout = () => {
+  const isFullscreen = useSelector((state) => state.safari.isFullscreen);
+  return (
+    <div>
+      <div className="w-full h-full flex justify-center items-center ">
+        <div className="w-full h-full flex justify-center items-center relative">
+          <div className="w-[65%] xl:w-[55%] rounded-xl overflow-hidden mt-10 group">
+            <img
+              src="images/akbar.JPG"
+              alt="Lanyard Placeholder"
+              className="w-full h-auto object-cover transform transition-transform duration-500 ease-in-out group-hover:scale-110"
+            />
+          </div>
+          <div className="absolute z-10 -left-18 md:-left-20 xl:-left-26 bottom-26">
+            <div className="rotate-270">
+              <p
+                className={clsx(
+                  isFullscreen ? "text-6xl ml-5 xl:ml-10" : "text-5xl",
+                  " text-white font-bold drop-shadow-lg ",
+                )}
+              >
+                アクバル
+              </p>
+            </div>
+          </div>
+        </div>
+      </div>
+    </div>
+  );
+};
+
+export default PhotoAbout;
