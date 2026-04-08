@@ -31,7 +31,7 @@ const FinderBody = () => {
     <div className="flex w-full h-full">
       <div className="w-[35%] h-full bg-gray-100  p-4">
         <div>
-          <h3 className="font-robot font-semibold text-gray-400 text-sm">
+          <h3 className="font-georama font-semibold text-gray-400 text-sm">
             Favorite
           </h3>
           <ul>
@@ -47,7 +47,7 @@ const FinderBody = () => {
                 onClick={() => dispatch(setActiveLocation(item))}
               >
                 <img src={item.icon} alt={item.name} className="w-4" />
-                <p className="text-sm font-medium font-roboto mx-1">
+                <p className="text-sm font-medium font-georama mx-1">
                   {item.name}
                 </p>
               </li>
@@ -55,7 +55,7 @@ const FinderBody = () => {
           </ul>
         </div>
         <div>
-          <h3 className="font-robot font-semibold text-gray-400 text-sm">
+          <h3 className="font-georama font-semibold text-gray-400 text-sm">
             Work
           </h3>
           <ul>
@@ -71,7 +71,7 @@ const FinderBody = () => {
                 onClick={() => dispatch(setActiveLocation(item))}
               >
                 <img src={item.icon} alt={item.name} className="w-4" />
-                <p className="text-sm font-medium font-roboto mx-1 truncate">
+                <p className="text-sm font-medium font-georama mx-1 truncate">
                   {item.name}
                 </p>
               </li>

@@ -1,6 +1,8 @@
 import { useSelector, useDispatch } from "react-redux";
 import { closeWindow, focusWindow } from "../../common/store/state/windowSlice";
 import { useState, useEffect } from "react";
+import { CiSearch } from "react-icons/ci";
+import PhotosBody from "./PhotosBody";
 
 const Photos = () => {
   const win = useSelector((state) => state.window.windows.photos);
@@ -51,7 +53,7 @@ const Photos = () => {
         left: position.x + 20,
         top: position.y + 20,
       }}
-      className="absolute w-96 bg-white rounded-xl shadow-lg overflow-hidden"
+      className="absolute w-[550px] bg-white rounded-xl shadow-lg overflow-hidden"
     >
       {/* HEADER */}
       <div
@@ -72,12 +74,14 @@ const Photos = () => {
           {/* 🟢 FULLSCREEN */}
           <button>🟢</button>
         </div>
-        <span>Galery</span>
+        <div className=" mr-3 mt-1">
+          <CiSearch className="w-5 h-5" />
+        </div>
       </div>
 
       {/* CONTENT */}
-      <div onMouseDown={() => dispatch(focusWindow("photos"))} className="p-4">
-        Ini halaman Galery
+      <div onMouseDown={() => dispatch(focusWindow("photos"))} className="">
+        <PhotosBody />
       </div>
     </div>
   );

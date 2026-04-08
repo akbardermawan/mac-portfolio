@@ -2,6 +2,7 @@ import { useSelector, useDispatch } from "react-redux";
 import { closeWindow, focusWindow } from "../../common/store/state/windowSlice";
 import { useState, useEffect } from "react";
 import FinderBody from "./FinderBody";
+import { CiSearch } from "react-icons/ci";
 
 const Finder = () => {
   const win = useSelector((state) => state.window.windows.finder);
@@ -89,7 +90,9 @@ const Finder = () => {
             🟢
           </button>
         </div>
-        <span>Finder</span>
+        <div className="mr-2 mt-1">
+          <CiSearch className="w-5 h-5" />
+        </div>
       </div>
 
       {/* CONTENT */}

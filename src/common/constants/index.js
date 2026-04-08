@@ -189,6 +189,63 @@ const locations = {
   trash: TRASH_LOCATION,
 };
 
+const socials = [
+  {
+    id: 1,
+    text: "Github",
+    icon: "/icons/github.svg",
+    bg: "#f4656b",
+    link: "https://github.com/akbardermawan",
+  },
+  {
+    id: 2,
+    text: "Platform",
+    icon: "/icons/atom.svg",
+    bg: "#4bcb63",
+    link: "https://github.com/akbardermawan",
+  },
+  {
+    id: 3,
+    text: "Twiter/X",
+    icon: "/icons/twitter.svg",
+    bg: "#f26222",
+    link: "https://github.com/akbardermawan",
+  },
+  {
+    id: 4,
+    text: "LinkedIn",
+    icon: "/icons/linkedin.svg",
+    bg: "#00b4d8",
+    link: "https://github.com/akbardermawan",
+  },
+];
+
+const skill = [
+  {
+    category: "Frontend",
+    tech: "React.js, Next.js, TypeScript",
+  },
+  {
+    category: "Mobile",
+    tech: "React Native, Expo",
+  },
+  {
+    category: "Styling",
+    tech: "Tailwind CSS, Sass, CSS",
+  },
+  {
+    category: "Backend",
+    tech: "Node.js, Express, NestJS, Hono",
+  },
+  {
+    category: "Database",
+    tech: "MongoDB, PostgreSQL",
+  },
+  {
+    category: "Dev Tools",
+    tech: "Git, GitHub, Docker",
+  },
+];
 export {
   dockApps,
   INITIAL_Z_INDEX,
@@ -200,4 +257,6 @@ export {
   ABOUT_LOCATION,
   RESUME_LOCATION,
   TRASH_LOCATION,
+  socials,
+  skill,
 };
