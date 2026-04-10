@@ -1,0 +1,44 @@
+import { ABOUT_LOCATION_Android } from "../../common/constants";
+import { useDispatch } from "react-redux";
+import { openWindow } from "../../common/store/state/windowSlice";
+
+const FinderBodyAndroid = () => {
+  const dispatch = useDispatch();
+
+  const openItem = (item) => {
+    if (item.fileType === "pdf") {
+      dispatch(openWindow({ windowKey: "resume" }));
+    }
+    if (["fig", "url"].includes(item.fileType) && item.href) {
+      window.open(item.href, "_blank");
+    }
+
+    if (["txt", "img"].includes(item.fileType)) {
+      return dispatch(openWindow({ windowKey: "textandphoto", data: item }));
+    }
+  };
+  return (
+    <div className="p-4">
+      <ul className="grid grid-cols-4 gap-6">
+        {ABOUT_LOCATION_Android.map((item) => (
+          <li
+            key={item.id}
+            className="flex flex-col items-center cursor-pointer"
+            onClick={() => openItem(item)}
+          >
+            <img
+              src={item.icon}
+              alt={item.name}
+              className="w-16 h-16 object-contain"
+            />
+            <p className="text-sm font-medium font-georama text-center mt-1 truncate w-16">
+              {item.name}
+            </p>
+          </li>
+        ))}
+      </ul>
+    </div>
+  );
+};
+
+export default FinderBodyAndroid;

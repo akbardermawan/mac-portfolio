@@ -3,6 +3,12 @@ import { closeWindow, focusWindow } from "../../common/store/state/windowSlice";
 import { useState, useEffect } from "react";
 import FinderBody from "./FinderBody";
 import { CiSearch } from "react-icons/ci";
+import { CiWifiOn } from "react-icons/ci";
+import { FaBatteryHalf } from "react-icons/fa";
+import { FaSignal } from "react-icons/fa";
+import { IoMdArrowBack } from "react-icons/io";
+import dayjs from "dayjs";
+import FinderBodyAndroid from "./FinderBodyAndroid";
 
 const Finder = () => {
   const win = useSelector((state) => state.window.windows.finder);
@@ -56,51 +62,95 @@ const Finder = () => {
   if (!win.isOpen) return null; // ⛔ penting!
 
   return (
-    <div
-      style={{
-        zIndex: win.zIndex,
-        left: isFullscreen ? 0 : position.x - 5,
-        top: isFullscreen ? 0 : position.y,
-        width: isFullscreen ? "100vw" : "34rem",
-        height: isFullscreen ? "100vh" : "auto",
-      }}
-      className="absolute w-96 bg-white rounded-xl shadow-lg overflow-hidden"
-    >
-      {/* HEADER */}
-      <div
-        onMouseDown={handleMouseDown}
-        className="flex justify-between p-2 bg-gray-200 rounded-t-xl"
-      >
-        <div className="flex gap-2">
-          {/* 🔴 CLOSE */}
-          <button
-            onClick={() => dispatch(closeWindow("finder"))}
-            className="cursor-pointer"
-          >
-            🔴
-          </button>
-          {/* 🟡 MINIMIZE */}
-          <button onClick={() => setIsMinimized(!isMinimized)}>🟡</button>
+    <div>
+      {/* Pc or laptop */}
 
-          {/* 🟢 FULLSCREEN */}
-          <button
-            onClick={() => setIsFullscreen(!isFullscreen)}
-            className="cursor-pointer"
-          >
-            🟢
-          </button>
+      <div
+        style={{
+          zIndex: win.zIndex,
+          left: isFullscreen ? 0 : position.x - 5,
+          top: isFullscreen ? 0 : position.y,
+          width: isFullscreen ? "100vw" : "34rem",
+          height: isFullscreen ? "100vh" : "auto",
+        }}
+        className="absolute w-96 bg-white rounded-xl shadow-lg overflow-hidden hidden md:flex md:flex-col"
+      >
+        {/* HEADER */}
+        <div
+          onMouseDown={handleMouseDown}
+          className="flex justify-between p-2 bg-gray-200 rounded-t-xl"
+        >
+          <div className="flex gap-2">
+            {/* 🔴 CLOSE */}
+            <button
+              onClick={() => dispatch(closeWindow("finder"))}
+              className="cursor-pointer"
+            >
+              🔴
+            </button>
+            {/* 🟡 MINIMIZE */}
+            <button onClick={() => setIsMinimized(!isMinimized)}>🟡</button>
+
+            {/* 🟢 FULLSCREEN */}
+            <button
+              onClick={() => setIsFullscreen(!isFullscreen)}
+              className="cursor-pointer"
+            >
+              🟢
+            </button>
+          </div>
+          <div className="mr-2 mt-1">
+            <CiSearch className="w-5 h-5" />
+          </div>
         </div>
-        <div className="mr-2 mt-1">
-          <CiSearch className="w-5 h-5" />
+
+        {/* CONTENT */}
+        <div
+          onMouseDown={() => dispatch(focusWindow("finder"))}
+          className="w-full h-full"
+        >
+          <FinderBody />
         </div>
       </div>
 
-      {/* CONTENT */}
+      {/* Android or hp */}
       <div
-        onMouseDown={() => dispatch(focusWindow("finder"))}
-        className="w-full h-full"
+        style={{
+          zIndex: win.zIndex,
+        }}
+        className=" absolute top-0 left-0 w-full h-screen bg-white  overflow-hidden flex flex-col md:hidden"
       >
-        <FinderBody />
+        {/* HEADER */}
+        <div className="w-full">
+          <div className="w-full flex justify-between items-center px-5 py-3 bg-gray-100">
+            <div>
+              <time className="font-georama">{dayjs().format(" h:mm A")} </time>
+            </div>
+            <div className="flex gap-4">
+              <CiWifiOn className="w-5 h-5" />
+              <FaSignal className="w-5 h-5" />
+              <FaBatteryHalf className="w-5 h-5" />
+            </div>
+          </div>
+          <div className="flex p-5 justify-between items-center">
+            <div
+              className="flex items-center cursor-pointer"
+              onClick={() => dispatch(closeWindow("finder"))}
+            >
+              <IoMdArrowBack className="w-5 h-5 mr-3" />
+              <span className="font-georama text-blue-500">Go Back</span>
+            </div>
+            <div>
+              <h3 className="text-xl font-georama transform -translate-x-45">
+                Portfolio
+              </h3>
+            </div>
+          </div>
+        </div>
+        {/* CONTENT */}
+        <div>
+          <FinderBodyAndroid />
+        </div>
       </div>
     </div>
   );

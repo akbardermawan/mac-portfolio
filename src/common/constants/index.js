@@ -142,6 +142,80 @@ const ABOUT_LOCATION = {
     },
   ],
 };
+const ABOUT_LOCATION_Android = [
+  {
+    id: 30,
+    name: "about-me.txt",
+    icon: "/images/txt.png",
+    kind: "file",
+    fileType: "txt",
+    windowKey: "textandphoto",
+    position: "top-10 left-5", //icon position insider Finder
+    windowPosition: "top-[15vh] right-20", //optional: Finder
+    description: [
+      "Question for candidate PNS Indonesia",
+      "Prepare for candidate PNS Indonesia",
+      "Question for candidate PNS Indonesia",
+    ],
+  },
+  {
+    id: 33,
+    name: "Akbar.png",
+    icon: "/images/image.png",
+    kind: "file",
+    fileType: "img", // ✅ WAJIB
+    windowKey: "textandphoto",
+    position: "top-10 left-5", //icon position insider Finder
+    windowPosition: "top-[15vh] right-20", //optional: Finder
+    src: "/images/blog1.png",
+  },
+  {
+    id: 32,
+    name: "CPNS.com",
+    icon: "/images/safari.png",
+    kind: "file",
+    fileType: "url",
+    position: "top-10 left-5",
+    href: "https://akbarcpns.netlify.app/",
+  },
+  {
+    id: 33,
+    name: "CPNS2.com",
+    icon: "/images/safari.png",
+    kind: "file",
+    fileType: "url",
+    position: "top-10 left-5",
+    href: "https://akbarcpns.netlify.app/",
+  },
+  {
+    id: 34,
+    name: "CPNS2.com",
+    icon: "/images/safari.png",
+    kind: "file",
+    fileType: "url",
+    position: "top-10 left-5",
+    href: "https://akbarcpns.netlify.app/",
+  },
+  {
+    id: 35,
+    name: "CPNS2.com",
+    icon: "/images/safari.png",
+    kind: "file",
+    fileType: "url",
+    position: "top-10 left-5",
+    href: "https://akbarcpns.netlify.app/",
+  },
+  {
+    id: 36,
+    name: "CPNS2.com",
+    icon: "/images/safari.png",
+    kind: "file",
+    fileType: "url",
+    position: "top-10 left-5",
+    href: "https://akbarcpns.netlify.app/",
+  },
+];
+
 const RESUME_LOCATION = {
   id: 3,
   type: "resume",
@@ -170,7 +244,7 @@ const TRASH_LOCATION = {
   children: [
     {
       id: 8,
-      name: "Akbar Dermawan.png",
+      name: "Akbar.png",
       icon: "/images/image.png",
       kind: "file",
       fileType: "img", // ✅ WAJIB
@@ -246,6 +320,118 @@ const skill = [
     tech: "Git, GitHub, Docker",
   },
 ];
+const services = [
+  {
+    title: "Frontend Developer",
+    icon: "images/web.png",
+    skill: ["React JS", "Tailwind CSS", "Flutter Dart", "Blazor"],
+  },
+  {
+    title: "Backend Developer",
+    icon: "images/backend.png",
+    skill: ["Node JS", "Next Js", "GO Echo", "ASP.Net Core"],
+  },
+  {
+    title: "Software Engineer",
+    icon: "images/creator.png",
+    skill: ["Postgre SQL", "Mongo DB", "Supabase", "GitHub", "Docker"],
+  },
+];
+
+const technologies = [
+  {
+    name: "HTML 5",
+    icon: "icons/tecnology/html.png",
+  },
+  {
+    name: "CSS 3",
+    icon: "icons/tecnology/css.png",
+  },
+  {
+    name: "JavaScript",
+    icon: "icons/tecnology/javascript.png",
+  },
+  {
+    name: "TypeScript",
+    icon: "icons/tecnology/typescript.png",
+  },
+  {
+    name: "CS",
+    icon: "icons/tecnology/CS.svg",
+  },
+  {
+    name: "React JS",
+    icon: "icons/tecnology/reactjs.png",
+  },
+  {
+    name: "Redux Toolkit",
+    icon: "icons/tecnology/redux.png",
+  },
+  {
+    name: "Tailwind CSS",
+    icon: "icons/tecnology/tailwind.png",
+  },
+  {
+    name: "Node JS",
+    icon: "icons/tecnology/nodejs.png",
+  },
+  {
+    name: "Next",
+    icon: "icons/tecnology/Next.svg",
+  },
+  {
+    name: "DotNet",
+    icon: "icons/tecnology/DotNet.svg",
+  },
+  {
+    name: "Postgre",
+    icon: "icons/tecnology/Postgre.svg",
+  },
+  {
+    name: "MongoDB",
+    icon: "icons/tecnology/mongodb.png",
+  },
+  {
+    name: "Three JS",
+    icon: "icons/tecnology/threejs.svg",
+  },
+
+  {
+    name: "git",
+    icon: "icons/tecnology/git.png",
+  },
+
+  {
+    name: "docker",
+    icon: "icons/tecnology/docker.png",
+  },
+];
+
+const imagesGalry = [
+  {
+    id: 70,
+    name: "Akbar.png",
+    icon: "/images/akbar.JPG",
+    kind: "file",
+    fileType: "img", // ✅ WAJIB
+    windowKey: "textandphoto",
+    position: "top-10 left-5", //icon position insider Finder
+    windowPosition: "top-[15vh] right-20", //optional: Finder
+    src: "/images/akbar.JPG",
+  },
+  {
+    id: 72,
+    name: "Akbar.png",
+    icon: "/images/blog1.png",
+    kind: "file",
+    fileType: "img", // ✅ WAJIB
+    windowKey: "textandphoto",
+    position: "top-10 left-5", //icon position insider Finder
+    windowPosition: "top-[15vh] right-20", //optional: Finder
+    src: "/images/blog1.png",
+  },
+];
+
 export {
   dockApps,
   INITIAL_Z_INDEX,
@@ -259,4 +445,8 @@ export {
   TRASH_LOCATION,
   socials,
   skill,
+  services,
+  technologies,
+  ABOUT_LOCATION_Android,
+  imagesGalry,
 };

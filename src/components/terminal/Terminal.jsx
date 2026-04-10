@@ -81,31 +81,35 @@ const Terminal = () => {
       {/* CONTENT */}
       <div
         onMouseDown={() => dispatch(focusWindow("terminal"))}
-        className="p-4 w-full"
+        className="p-4 w-full bg-black"
       >
-        <p className="mb-5 font-roboto">
-          <span className="font-bold ">@akbar</span>% show tect stack
+        <p className="mb-5 font-roboto text-gray-400">
+          <span className="font-bold  ">@akbar</span>% show tect stack
         </p>
         {/* Header */}
         <div className="grid grid-cols-2 pb-3 border-b border-gray-300 text-gray-600 font-medium">
-          <span>Category</span>
-          <span>Technologies</span>
+          <span className=" font-roboto text-gray-400">Category</span>
+          <span className=" font-roboto text-gray-400">Technologies</span>
         </div>
 
         {/* List */}
-        <div className="mt-4 space-y-4">
+        <div className="mt-4 space-y-4 border-b border-gray-300 text-gray-600 pb-3">
           {skill.map((item, index) => (
             <div key={index} className="grid grid-cols-2 items-center">
               {/* Category */}
-              <div className="flex items-center gap-2 text-green-600 font-semibold">
+              <div className="flex items-center gap-2 text-green-600 font-semibold font-roboto">
                 {item.category}
               </div>
 
               {/* Technologies */}
-              <div className="text-gray-700">{item.tech}</div>
+              <div className="text-gray-400 font-roboto">{item.tech}</div>
             </div>
           ))}
         </div>
+        <p className=" text-green-600 font-semibold font-roboto mt-5">
+          5 of 5 stacks loaded successfully (100%)
+        </p>
+        <p className="text-gray-400 font-roboto">Render time: 6ms</p>
       </div>
     </div>
   );

@@ -11,6 +11,9 @@ import TextAndPhoto from "./components/textandphoto/TextAndPhoto";
 import Welcome from "./components/welcome/Welcome";
 import "react-pdf/dist/Page/TextLayer.css";
 import "react-pdf/dist/Page/AnnotationLayer.css";
+import "slick-carousel/slick/slick.css";
+import "slick-carousel/slick/slick-theme.css";
+import Cpns from "./components/dekstop/Cpns";
 
 function App() {
   return (
@@ -27,6 +30,7 @@ function App() {
       <Archive />
       <Resume />
       <TextAndPhoto />
+      <Cpns />
     </main>
   );
 }

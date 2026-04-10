@@ -42,7 +42,7 @@ const TypeWriter = ({ text = "", speed = 100, pause = 100 }) => {
         color: "white",
         fontFamily: "bold",
         whiteSpace: "pre",
-        fontSize: "clamp(1.6rem, 1.6rem, 1.6rem)",
+        fontSize: "clamp(1.8rem, 1.8rem, 1.8rem)",
       }}
     >
       {displayedText}

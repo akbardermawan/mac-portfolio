@@ -11,6 +11,7 @@ import { useRef } from "react";
 
 // tooltip
 import { Tooltip } from "react-tooltip";
+import clsx from "clsx";
 
 const Dock = () => {
   const dockRef = useRef(null);
@@ -73,12 +74,13 @@ const Dock = () => {
 
   return (
     <section className="absolute bottom-5 left-1/2 -translate-x-1/2 z-50 select-none">
+      {/* Pc or Laptop */}
       <div
         ref={dockRef}
-        className="bg-white/20 backdrop-blur-md rounded-2xl p-2 flex items-end gap-2"
+        className="hidden md:flex bg-white/20 backdrop-blur-md rounded-2xl p-2 items-end gap-2"
       >
-        {dockApps.map((app) => (
-          <div key={app.id} className="flex justify-center">
+        {dockApps.map((app, i) => (
+          <div key={app.id} className={clsx("flex justify-center")}>
             <button
               onClick={() => dispatch(toggleWindow(app.id))}
               className="dock-icon size-14 sm:size-16 cursor-pointer"
@@ -101,6 +103,31 @@ const Dock = () => {
           delayHide={100}
           className="!py-1 !px-3 !text-xs !rounded-md !bg-blue-200 !text-blue-900 !shadow-xl"
         />
+      </div>
+      {/* Mobile */}
+      <div
+        ref={dockRef}
+        className="flex md:hidden bg-white/20 backdrop-blur-md rounded-2xl p-2 items-end gap-2"
+      >
+        {dockApps.map((app, i) => (
+          <div
+            key={app.id}
+            className={clsx(i >= 4 ? "hidden" : "", "flex justify-center")}
+          >
+            <button
+              onClick={() => dispatch(toggleWindow(app.id))}
+              className="dock-icon size-20  cursor-pointer"
+              data-tooltip-id="dock-tooltip"
+              data-tooltip-content={app.name}
+            >
+              <img
+                src={`/images/${app.icon}`}
+                alt={app.name}
+                className="w-full h-full object-contain"
+              />
+            </button>
+          </div>
+        ))}
       </div>
     </section>
   );

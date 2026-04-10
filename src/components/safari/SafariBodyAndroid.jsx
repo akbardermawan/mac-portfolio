@@ -1,32 +1,28 @@
 import React from "react";
 import Intro from "./component/intro/Intro";
-import TypeWriter from "./component/about/TypeWriter";
+import IntroAndroid from "./component/intro/IntroAndroid";
 import PhotoAbout from "./component/about/PhotoAbout";
-import { useSelector } from "react-redux";
-import clsx from "clsx";
-
-import { FiDownload } from "react-icons/fi";
+import TypeWriter from "./component/about/TypeWriter";
 import { motion } from "framer-motion";
+import { FiDownload } from "react-icons/fi";
+import SingleCard from "./component/skill/SingleCard";
+import InfiniteScroll from "./component/skill/InfiniteScroll";
+import ServiceCard from "./component/skill/ServiceCard";
 
 import { services } from "../../common/constants/index.js";
-import ServiceCard from "./component/skill/ServiceCard.jsx";
-import SingleCard from "./component/skill/SingleCard.jsx";
 import FlowChart from "./component/experience/FlowChart.jsx";
-import InfiniteScroll from "./component/skill/InfiniteScroll.jsx";
 import IntroductionVideo from "./component/video/IntroductionVideo.jsx";
 import Quotes from "./component/quotes/Quotes.jsx";
 import Footer from "./component/Footer.jsx";
 
-const SafariBody = () => {
-  const isFullscreen = useSelector((state) => state.safari.isFullscreen);
-
+const SafariBodyAndroid = () => {
   return (
-    <div className="w-full h-full overflow-y-scroll scroll-smooth bg-black rounded pt-1 pb-5">
-      <div className="w-full h-full">
-        <Intro />
+    <div className="w-full bg-black overflow-y-scroll">
+      <div className="w-full h-screen">
+        <IntroAndroid />
       </div>
       {/* About */}
-      <div className="w-full max-w-4xl mx-auto mt-5 ">
+      <div className="w-full max-w-4xl mx-auto mt-5 px-2">
         {/* teks dan efek hover */}
         <div
           className="relative z-10 inline-block 
@@ -47,20 +43,11 @@ const SafariBody = () => {
             <PhotoAbout />
           </div>
           <div className="w-[55%]">
-            <TypeWriter
-              text="Akbar Dermawan Mahbubillah"
-              speed={80}
-              pause={80}
-            />
+            <h2 className="text-white text-2xl font-poppins font-bold">
+              Akbar Dermawan
+            </h2>
             <div className="mt-2 md:mt-4 mx-auto px-1">
-              <p
-                className={clsx(
-                  isFullscreen
-                    ? "md:text-2xl "
-                    : "md:text-xl md:first-letter:text-3xl md:pr-5",
-                  "text-sky-300 mx-auto text-justify indent-8  first-letter:font-bold first-letter:mr-1",
-                )}
-              >
+              <p className="md:text-xl md:first-letter:text-3xl md:pr-5 text-sky-300 mx-auto text-justify indent-8  first-letter:font-bold first-letter:mr-1">
                 I am a website developer with an educational background in
                 Agricultural Engineering from the University of Jember,
                 Indonesia. Although my career path slightly deviates from my
@@ -91,6 +78,7 @@ const SafariBody = () => {
           </div>
         </div>
       </div>
+
       {/* Skill */}
       <div className="flex flex-col w-full max-w-4xl mx-auto mt-20 px-5">
         <div className="w-full">
@@ -121,6 +109,7 @@ const SafariBody = () => {
           <InfiniteScroll />
         </div>
       </div>
+
       {/* experience */}
       <div className="flex flex-col w-full max-w-4xl mx-auto mt-20 pl-5 items-center justify-center">
         <div className="w-full text-center">
@@ -134,11 +123,7 @@ const SafariBody = () => {
           >
             <h3 className="text-4xl text-white">Experience Work</h3>
           </div>
-          <div
-            className={clsx(
-              "about-subtext text-center px-4 max-w-xl mx-auto mt-2",
-            )}
-          >
+          <div className="about-subtext text-center px-4 max-w-xl mx-auto mt-2">
             <p className="text-white">Modern, Functional, and Responsive</p>
             <p className="text-gray-500">
               One sip of coffee is a stream of elegant code
@@ -149,6 +134,7 @@ const SafariBody = () => {
           <FlowChart />
         </div>
       </div>
+
       {/* Introduction vidio  */}
       <div className="max-w-7xl w-full px-8 lg:px-12 mx-auto mb-5 mt-5 md:mt-20 lg:mt-30 zoom-in ">
         <IntroductionVideo />
@@ -181,4 +167,4 @@ const SafariBody = () => {
   );
 };
 
-export default SafariBody;
+export default SafariBodyAndroid;
