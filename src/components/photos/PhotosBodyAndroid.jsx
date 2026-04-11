@@ -16,7 +16,7 @@ const PhotosBodyAndroid = () => {
   };
   return (
     <div className="p-4">
-      <ul className="grid grid-cols-4 gap-6">
+      <ul className="grid grid-cols-5 gap-4">
         {imagesGalry.map((item) => (
           <li
             key={item.id}
@@ -28,9 +28,6 @@ const PhotosBodyAndroid = () => {
               alt={item.name}
               className="w-16 h-16 object-contain"
             />
-            <p className="text-sm font-medium font-georama text-center mt-1 truncate w-16">
-              {item.name}
-            </p>
           </li>
         ))}
       </ul>

@@ -107,7 +107,7 @@ const Dock = () => {
       {/* Mobile */}
       <div
         ref={dockRef}
-        className="flex md:hidden bg-white/20 backdrop-blur-md rounded-2xl p-2 items-end gap-2"
+        className="flex md:hidden bg-white/20 backdrop-blur-md rounded-2xl p-2 mb-4 items-end gap-2"
       >
         {dockApps.map((app, i) => (
           <div
@@ -116,7 +116,7 @@ const Dock = () => {
           >
             <button
               onClick={() => dispatch(toggleWindow(app.id))}
-              className="dock-icon size-20  cursor-pointer"
+              className="dock-icon size-16  cursor-pointer"
               data-tooltip-id="dock-tooltip"
               data-tooltip-content={app.name}
             >

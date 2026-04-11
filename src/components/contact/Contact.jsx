@@ -127,16 +127,6 @@ const Contact = () => {
       >
         {/* HEADER */}
         <div className="w-full">
-          <div className="w-full flex justify-between items-center px-5 py-3 bg-gray-100">
-            <div>
-              <time className="font-georama">{dayjs().format(" h:mm A")} </time>
-            </div>
-            <div className="flex gap-4">
-              <CiWifiOn className="w-5 h-5" />
-              <FaSignal className="w-5 h-5" />
-              <FaBatteryHalf className="w-5 h-5" />
-            </div>
-          </div>
           <div className="flex p-5 justify-between items-center">
             <div
               className="flex items-center cursor-pointer"
@@ -154,7 +144,7 @@ const Contact = () => {
         </div>
 
         {/* CONTENT */}
-        <div className="p-4">
+        <div className="p-4 overflow-x-hidden overflow-y-scroll">
           <div className="space-y-5 w-20 h-20 overflow-hidden rounded-full">
             <img src="/images/akbar.JPG" alt="Akbar" className="w-20" />
           </div>

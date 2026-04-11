@@ -43,16 +43,13 @@ const SafariBodyAndroid = () => {
             <PhotoAbout />
           </div>
           <div className="w-[55%]">
-            <h2 className="text-white text-2xl font-poppins font-bold">
+            <h2 className="text-white text-xl font-poppins font-bold">
               Akbar Dermawan
             </h2>
-            <div className="mt-2 md:mt-4 mx-auto px-1">
-              <p className="md:text-xl md:first-letter:text-3xl md:pr-5 text-sky-300 mx-auto text-justify indent-8  first-letter:font-bold first-letter:mr-1">
-                I am a website developer with an educational background in
-                Agricultural Engineering from the University of Jember,
-                Indonesia. Although my career path slightly deviates from my
-                academic background, I chose to focus on enhancing my
-                programming skills, particularly in web development.
+            <div className="mt-2 md:mt-4 mx-auto pr-3">
+              <p className="text-sm md:text-xl md:first-letter:text-3xl md:pr-5 text-sky-300 mx-auto text-justify indent-8  first-letter:font-bold first-letter:mr-1">
+                My website is pretty simple — nothing too fancy, but it works
+                smoothly and is really easy for anyone to use 😄
               </p>
             </div>
             <div className="flex gap-4">

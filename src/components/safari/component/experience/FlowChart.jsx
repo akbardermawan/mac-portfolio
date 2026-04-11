@@ -38,12 +38,12 @@ const FlowChart = () => {
   const isFullscreen = useSelector((state) => state.safari.isFullscreen);
 
   return (
-    <section className="py-10 px-5 md:px-20">
+    <section className="py-5 px-5 md:px-20">
       <ul className="flex flex-col gap-10">
         {timelineData.map((item, i) => (
           <li
             key={i}
-            className="flex flex-col md:flex-row gap-5 bg-white/5 backdrop-blur-lg p-5 rounded-2xl shadow-lg"
+            className="flex flex-col md:flex-row gap-5 bg-white/10 backdrop-blur-lg p-5 rounded-2xl shadow-lg"
           >
             {/* TEXT */}
             <div className="flex-1 flex flex-col justify-center">

@@ -103,16 +103,6 @@ const Photos = () => {
       >
         {/* HEADER */}
         <div className="w-full">
-          <div className="w-full flex justify-between items-center px-5 py-3 bg-gray-100">
-            <div>
-              <time className="font-georama">{dayjs().format(" h:mm A")} </time>
-            </div>
-            <div className="flex gap-4">
-              <CiWifiOn className="w-5 h-5" />
-              <FaSignal className="w-5 h-5" />
-              <FaBatteryHalf className="w-5 h-5" />
-            </div>
-          </div>
           <div className="flex p-5 justify-between items-center">
             <div
               className="flex items-center cursor-pointer"
@@ -121,8 +111,8 @@ const Photos = () => {
               <IoMdArrowBack className="w-5 h-5 mr-3" />
               <span className="font-georama text-blue-500">Go Back</span>
             </div>
-            <div>
-              <h3 className="text-xl font-georama transform -translate-x-45">
+            <div className="w-[50%]">
+              <h3 className="text-xl text-gray-500 font-georama font-bold transform -translate-x-1/5">
                 Galery
               </h3>
             </div>

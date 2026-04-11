@@ -122,16 +122,6 @@ const Finder = () => {
       >
         {/* HEADER */}
         <div className="w-full">
-          <div className="w-full flex justify-between items-center px-5 py-3 bg-gray-100">
-            <div>
-              <time className="font-georama">{dayjs().format(" h:mm A")} </time>
-            </div>
-            <div className="flex gap-4">
-              <CiWifiOn className="w-5 h-5" />
-              <FaSignal className="w-5 h-5" />
-              <FaBatteryHalf className="w-5 h-5" />
-            </div>
-          </div>
           <div className="flex p-5 justify-between items-center">
             <div
               className="flex items-center cursor-pointer"
@@ -141,9 +131,7 @@ const Finder = () => {
               <span className="font-georama text-blue-500">Go Back</span>
             </div>
             <div>
-              <h3 className="text-xl font-georama transform -translate-x-45">
-                Portfolio
-              </h3>
+              <CiSearch className="w-5 h-5 mr-5" />
             </div>
           </div>
         </div>

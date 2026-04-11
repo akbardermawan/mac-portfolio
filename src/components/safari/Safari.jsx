@@ -133,16 +133,6 @@ const Safari = () => {
       >
         {/* HEADER */}
         <div className="w-full flex-shrink-0">
-          {/* Status bar */}
-          <div className="w-full flex justify-between items-center px-5 py-3 bg-gray-100">
-            <time className="font-georama">{dayjs().format(" h:mm A")}</time>
-
-            <div className="flex gap-4">
-              <CiWifiOn className="w-5 h-5" />
-              <FaSignal className="w-5 h-5" />
-              <FaBatteryHalf className="w-5 h-5" />
-            </div>
-          </div>
           <div className="w-full flex justify-between items-center  bg-gray-200 py-1">
             {/* Back button */}
             <div
