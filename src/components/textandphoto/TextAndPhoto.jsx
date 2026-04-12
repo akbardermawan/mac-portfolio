@@ -63,7 +63,7 @@ const TextAndPhoto = () => {
           left: position.x + 20,
           top: position.y + 20,
         }}
-        className="hidden md:flex md:flex-col absolute w-96 bg-white rounded-xl shadow-lg overflow-hidden"
+        className="hidden md:flex md:flex-col absolute w-[580px] bg-white rounded-xl shadow-lg overflow-hidden"
       >
         {/* HEADER */}
         <div
@@ -128,7 +128,7 @@ const TextAndPhoto = () => {
               <span className="font-georama text-blue-500">Go Back</span>
             </div>
             <div>
-              <h3 className="text-xl font-georama transform -translate-x-45">
+              <h3 className="text-xl text-white font-georama font-bold transform -translate-x-2/3 ">
                 Preview
               </h3>
             </div>

@@ -159,7 +159,7 @@ const ABOUT_LOCATION_Android = [
     ],
   },
   {
-    id: 33,
+    id: 31,
     name: "Akbar.png",
     icon: "/images/image.png",
     kind: "file",
@@ -421,6 +421,61 @@ const imagesGalry = [
   },
   {
     id: 72,
+    name: "Akbar.png",
+    icon: "/images/akbar-2.JPG",
+    kind: "file",
+    fileType: "img", // ✅ WAJIB
+    windowKey: "textandphoto",
+    position: "top-10 left-5", //icon position insider Finder
+    windowPosition: "top-[15vh] right-20", //optional: Finder
+    src: "/images/akbar-2.JPG",
+  },
+  {
+    id: 73,
+    name: "Akbar.png",
+    icon: "/images/akbar-3.JPG",
+    kind: "file",
+    fileType: "img", // ✅ WAJIB
+    windowKey: "textandphoto",
+    position: "top-10 left-5", //icon position insider Finder
+    windowPosition: "top-[15vh] right-20", //optional: Finder
+    src: "/images/akbar-3.JPG",
+  },
+  {
+    id: 74,
+    name: "Akbar.png",
+    icon: "/images/akbar-4.JPG",
+    kind: "file",
+    fileType: "img", // ✅ WAJIB
+    windowKey: "textandphoto",
+    position: "top-10 left-5", //icon position insider Finder
+    windowPosition: "top-[15vh] right-20", //optional: Finder
+    src: "/images/akbar-4.JPG",
+  },
+  {
+    id: 75,
+    name: "Akbar.png",
+    icon: "/images/akbar-5.jpg",
+    kind: "file",
+    fileType: "img", // ✅ WAJIB
+    windowKey: "textandphoto",
+    position: "top-10 left-5", //icon position insider Finder
+    windowPosition: "top-[15vh] right-20", //optional: Finder
+    src: "/images/akbar-5.jpg",
+  },
+  {
+    id: 76,
+    name: "Akbar.png",
+    icon: "/images/akbar-6.JPG",
+    kind: "file",
+    fileType: "img", // ✅ WAJIB
+    windowKey: "textandphoto",
+    position: "top-10 left-5", //icon position insider Finder
+    windowPosition: "top-[15vh] right-20", //optional: Finder
+    src: "/images/akbar-6.JPG",
+  },
+  {
+    id: 77,
     name: "Akbar.png",
     icon: "/images/blog1.png",
     kind: "file",

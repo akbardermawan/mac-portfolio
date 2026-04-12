@@ -136,7 +136,7 @@ const Contact = () => {
               <span className="font-georama text-blue-500">Go Back</span>
             </div>
             <div>
-              <h3 className="text-xl font-georama transform -translate-x-45">
+              <h3 className="text-xl text-gray-500 font-georama font-bold transform -translate-x-1/5">
                 Contact
               </h3>
             </div>

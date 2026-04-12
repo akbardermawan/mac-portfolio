@@ -62,7 +62,7 @@ const Photos = () => {
           left: position.x + 20,
           top: position.y + 20,
         }}
-        className="hidden md:flex md:flex-col absolute w-[550px] bg-white rounded-xl shadow-lg overflow-hidden"
+        className="hidden md:flex md:flex-col absolute w-[590px] bg-white rounded-xl shadow-lg overflow-hidden"
       >
         {/* HEADER */}
         <div

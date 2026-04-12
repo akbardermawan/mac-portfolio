@@ -1,16 +1,21 @@
 import clsx from "clsx";
-import React from "react";
+import { imagesGalry } from "../../common/constants/index.js";
+import { useDispatch } from "react-redux";
+import { openWindow } from "../../common/store/state/windowSlice";
 
 const galeryMenu = ["Library", "Memories", "Places", "People", "Favorite"];
 
-const imagesGalry = [
-  { id: 1, name: "akbar.jpg", src: "/images/akbar.JPG" },
-  { id: 2, name: "blog1.png", src: "/images/blog1.png" },
-];
-
 const PhotosBody = () => {
+  const dispatch = useDispatch();
+
   const openItem = (item) => {
-    console.log("Open:", item);
+    if (["fig", "url"].includes(item.fileType) && item.href) {
+      window.open(item.href, "_blank");
+    }
+
+    if (["txt", "img"].includes(item.fileType)) {
+      return dispatch(openWindow({ windowKey: "textandphoto", data: item }));
+    }
   };
 
   return (
