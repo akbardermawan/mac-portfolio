@@ -44,9 +44,9 @@ const PhotoAbout = () => {
               className="w-full h-auto object-cover transform transition-transform duration-500 ease-in-out group-hover:scale-110"
             />
           </div>
-          <div className="-left-18 absolute z-10  bottom-26">
+          <div className="-left-13 top-20 absolute z-10  bottom-26">
             <div className="rotate-270">
-              <p className="text-5xl text-white font-bold drop-shadow-lg ">
+              <p className="text-4xl text-white font-bold drop-shadow-lg ">
                 アクバル
               </p>
             </div>

@@ -1,6 +1,7 @@
 import { useSelector, useDispatch } from "react-redux";
 import { closeWindow, focusWindow } from "../../common/store/state/windowSlice";
 import { useState, useEffect } from "react";
+import ArchiveBody from "./ArchiveBody";
 
 const Archive = () => {
   const win = useSelector((state) => state.window.windows.archive);
@@ -51,7 +52,7 @@ const Archive = () => {
         left: position.x + 40,
         top: position.y + 75,
       }}
-      className="absolute w-96 bg-white rounded-xl shadow-lg overflow-hidden"
+      className="absolute w-[500px] bg-white rounded-xl shadow-lg overflow-hidden"
     >
       {/* HEADER */}
       <div
@@ -72,12 +73,17 @@ const Archive = () => {
           {/* 🟢 FULLSCREEN */}
           <button>🟢</button>
         </div>
-        <span>Archive</span>
+        <span className="transform -translate-x-50 font-bold text-xl text-gray-600">
+          Archive
+        </span>
       </div>
 
       {/* CONTENT */}
-      <div onMouseDown={() => dispatch(focusWindow("archive"))} className="p-4">
-        Ini halaman Archive
+      <div
+        onMouseDown={() => dispatch(focusWindow("archive"))}
+        className="w-full"
+      >
+        <ArchiveBody />
       </div>
     </div>
   );

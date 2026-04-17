@@ -100,9 +100,8 @@ const WORK_LOCATION = {
           windowKey: "textandphoto",
           position: "top-10 left-5",
           description: [
-            "Question for candidate PNS Indonesia",
-            "Prepare for candidate PNS Indonesia",
-            "Question for candidate PNS Indonesia",
+            "I have developed a web-based simulation application designed to help users practice CPNS exam questions. The website is fully responsive, ensuring a seamless and user-friendly experience across various devices, including desktops, tablets, and smartphones.",
+            "https://akbarcpns.netlify.app/",
           ],
         },
         {
@@ -135,9 +134,7 @@ const ABOUT_LOCATION = {
       position: "top-10 left-5", //icon position insider Finder
       windowPosition: "top-[15vh] right-20", //optional: Finder
       description: [
-        "Question for candidate PNS Indonesia",
-        "Prepare for candidate PNS Indonesia",
-        "Question for candidate PNS Indonesia",
+        "I am a website developer with an educational background in Agricultural Engineering from the University of Jember, Indonesia. Although my career path slightly deviates from my academic background, I chose to focus on enhancing my programming skills, particularly in web development.",
       ],
     },
   ],
@@ -153,9 +150,7 @@ const ABOUT_LOCATION_Android = [
     position: "top-10 left-5", //icon position insider Finder
     windowPosition: "top-[15vh] right-20", //optional: Finder
     description: [
-      "Question for candidate PNS Indonesia",
-      "Prepare for candidate PNS Indonesia",
-      "Question for candidate PNS Indonesia",
+      "I am a website developer with an educational background in Agricultural Engineering from the University of Jember, Indonesia. Although my career path slightly deviates from my academic background, I chose to focus on enhancing my programming skills, particularly in web development.",
     ],
   },
   {
@@ -251,10 +246,61 @@ const TRASH_LOCATION = {
       windowKey: "textandphoto",
       position: "top-10 left-5", //icon position insider Finder
       windowPosition: "top-[15vh] right-20", //optional: Finder
-      src: "/images/blog1.png",
+      src: "/images/akbar-7.JPG",
+    },
+
+    {
+      id: 9,
+      name: "Second Portfolio.com",
+      icon: "/images/safari.png",
+      kind: "file",
+      fileType: "url",
+      position: "top-20 left-10",
+      href: "https://akbardermawan-react.netlify.app/",
     },
   ],
 };
+
+const Archive = [
+  {
+    id: 1,
+    name: "Akbar.png",
+    icon: "/images/image.png",
+    kind: "file",
+    fileType: "img", // ✅ WAJIB
+    windowKey: "textandphoto",
+    position: "top-10 left-5", //icon position insider Finder
+    windowPosition: "top-[15vh] right-20", //optional: Finder
+    src: "/images/akbar-7.jpg",
+  },
+  {
+    id: 2,
+    name: "First Portfolio.com",
+    icon: "/images/safari.png",
+    kind: "file",
+    fileType: "url",
+    position: "top-10 left-5",
+    href: "https://akbardermawan.github.io/",
+  },
+  {
+    id: 3,
+    name: "Second Portfolio.com",
+    icon: "/images/safari.png",
+    kind: "file",
+    fileType: "url",
+    position: "top-10 left-5",
+    href: "https://akbardermawan-react.netlify.app/",
+  },
+  {
+    id: 4,
+    name: "Weding Invitation.com",
+    icon: "/images/safari.png",
+    kind: "file",
+    fileType: "url",
+    position: "top-10 left-5",
+    href: "https://akbardermawan.github.io/wedding-invitation2/",
+  },
+];
 
 const locations = {
   work: WORK_LOCATION,
@@ -504,4 +550,5 @@ export {
   technologies,
   ABOUT_LOCATION_Android,
   imagesGalry,
+  Archive,
 };

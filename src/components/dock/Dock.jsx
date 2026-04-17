@@ -105,10 +105,7 @@ const Dock = () => {
         />
       </div>
       {/* Mobile */}
-      <div
-        ref={dockRef}
-        className="flex md:hidden bg-white/20 backdrop-blur-md rounded-2xl p-2 mb-10 items-end gap-2"
-      >
+      <div className="flex md:hidden bg-white/20 backdrop-blur-md rounded-2xl p-2 mb-10 items-end gap-2">
         {dockApps.map((app, i) => (
           <div
             key={app.id}
