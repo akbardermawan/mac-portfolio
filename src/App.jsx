@@ -14,6 +14,7 @@ import "react-pdf/dist/Page/AnnotationLayer.css";
 import "slick-carousel/slick/slick.css";
 import "slick-carousel/slick/slick-theme.css";
 import Cpns from "./components/dekstop/Cpns";
+import Village from "./components/dekstop/Village";
 
 function App() {
   return (
@@ -31,6 +32,7 @@ function App() {
       <Resume />
       <TextAndPhoto />
       <Cpns />
+      <Village />
     </main>
   );
 }

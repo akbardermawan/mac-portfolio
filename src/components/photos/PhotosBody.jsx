@@ -21,7 +21,7 @@ const PhotosBody = () => {
   return (
     <div className="flex w-full h-full">
       {/* LEFT */}
-      <div className="w-[35%] h-full bg-gray-100 p-4">
+      <div className="w-[35%] h-full p-4">
         <h3 className="font-semibold text-gray-400 text-sm font-georama">
           Photos
         </h3>

@@ -1,7 +1,7 @@
 import { useState, useEffect, useRef } from "react";
 
-const Cpns = () => {
-  const [position, setPosition] = useState({ x: 50, y: 100 });
+const Village = () => {
+  const [position, setPosition] = useState({ x: 50, y: 200 });
 
   const draggingRef = useRef(false);
   const offsetRef = useRef({ x: 0, y: 0 });
@@ -50,7 +50,6 @@ const Cpns = () => {
       window.removeEventListener("mouseup", handleMouseUp);
     };
   }, []);
-
   return (
     <div
       style={{
@@ -72,21 +71,21 @@ const Cpns = () => {
           draggable={false}
           className="cursor-pointer hover:scale-110 active:scale-95"
         />
-        <p>CPNS.com</p>
+        <p>Village.com</p>
       </div>
       <div className="flex md:hidden flex-col items-center cursor-move select-none">
-        <a href="https://akbarcpns.netlify.app/" target="_blank">
+        <a href="https://webvillage.netlify.app/" target="_blank">
           <img
             src="/images/safari.png"
             alt="cpns.com"
             draggable={false}
             className="cursor-pointer hover:scale-110 active:scale-95"
           />
-          <p className="font-semibold">CPNS.com</p>
+          <p className="font-semibold">Village.com</p>
         </a>
       </div>
     </div>
   );
 };
 
-export default Cpns;
+export default Village;
