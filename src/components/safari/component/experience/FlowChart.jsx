@@ -1,5 +1,6 @@
 import React from "react";
 import { useSelector } from "react-redux";
+import { motion } from "framer-motion";
 
 const timelineData = [
   {
@@ -41,9 +42,13 @@ const FlowChart = () => {
     <section className="py-5 px-5 md:px-20">
       <ul className="flex flex-col gap-10">
         {timelineData.map((item, i) => (
-          <li
+          <motion.li
             key={i}
             className="flex flex-col md:flex-row gap-5 bg-white/10 backdrop-blur-lg p-5 rounded-2xl shadow-lg"
+            initial={{ opacity: 0, y: 100 }}
+            whileInView={{ opacity: 1, y: 0 }}
+            viewport={{ once: true, amount: 0.4 }}
+            transition={{ duration: 0.8, delay: i * 0.2 }}
           >
             {/* TEXT */}
             <div className="flex-1 flex flex-col justify-center">
@@ -70,7 +75,7 @@ const FlowChart = () => {
                 className="w-full h-full object-cover hover:scale-105 transition duration-300"
               />
             </div>
-          </li>
+          </motion.li>
         ))}
       </ul>
     </section>

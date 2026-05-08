@@ -32,6 +32,7 @@ const Footer = () => {
           </a>
           <a
             href="https://mail.google.com/mail/u/0/#search/akbardermawan27%40gmail.com"
+            target="_blank"
             className="hover:text-blue-400 transition flex"
           >
             <MdOutlineEmail className="w-5 h-5 mx-1  mt-1" />
@@ -39,6 +40,7 @@ const Footer = () => {
           </a>
           <a
             href="https://www.youtube.com/@ADM.code1"
+            target="_blank"
             className="hover:text-blue-400 transition flex"
           >
             <FaYoutube className="w-5 h-5 mx-1  mt-1" />

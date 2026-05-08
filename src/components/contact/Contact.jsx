@@ -154,7 +154,7 @@ const Contact = () => {
             Got an idea? A bug to squash? Or just wanna talk tech? I'm in.
           </p>
 
-          <ul className="flex flex-col gap-5 mt-10 i">
+          <ul className="flex flex-col gap-5 mt-10 mb-10 i">
             {socials.map(({ id, bg, link, icon, text }) => (
               <li
                 key={id}
