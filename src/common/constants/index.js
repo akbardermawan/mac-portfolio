@@ -49,6 +49,8 @@ const WINDOW_CONFIG = {
   archive: { isOpen: false, zIndex: INITIAL_Z_INDEX, data: null },
   txtfile: { isOpen: false, zIndex: INITIAL_Z_INDEX, data: null },
   imgfile: { isOpen: false, zIndex: INITIAL_Z_INDEX, data: null },
+  cpns: { isOpen: false, zIndex: INITIAL_Z_INDEX, data: null },
+  village: { isOpen: false, zIndex: INITIAL_Z_INDEX, data: null },
 };
 
 const navLinks = [
@@ -246,7 +248,7 @@ const TRASH_LOCATION = {
       windowKey: "textandphoto",
       position: "top-10 left-5", //icon position insider Finder
       windowPosition: "top-[15vh] right-20", //optional: Finder
-      src: "/images/akbar-7.JPG",
+      src: "/images/akbar-7.jpg",
     },
 
     {
