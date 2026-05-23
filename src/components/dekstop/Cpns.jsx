@@ -313,13 +313,13 @@ const Cpns = () => {
         <div className="flex md:hidden flex-col items-center">
           <a href="https://akbarcpns.netlify.app/" target="_blank">
             <img
-              src="/images/safari.png"
+              src="/images/dekstop/cpns-logo.png"
               alt="cpns.com"
               draggable={false}
               className="w-20"
             />
 
-            <p className="font-semibold text-white">CPNS.com</p>
+            <p className="font-semibold text-white text-center">CPNS</p>
           </a>
         </div>
       </div>

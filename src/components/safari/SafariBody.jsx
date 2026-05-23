@@ -16,6 +16,7 @@ import InfiniteScroll from "./component/skill/InfiniteScroll.jsx";
 import IntroductionVideo from "./component/video/IntroductionVideo.jsx";
 import Quotes from "./component/quotes/Quotes.jsx";
 import Footer from "./component/Footer.jsx";
+import ProfileCard from "./component/about/ProfileCard.jsx";
 
 const SafariBody = () => {
   const isFullscreen = useSelector((state) => state.safari.isFullscreen);
@@ -43,8 +44,23 @@ const SafariBody = () => {
         </div>
 
         <div className="flex w-full max-w-4xl mx-auto mt-5">
-          <div className="w-[45%] relative">
-            <PhotoAbout />
+          <div className="w-[45%] relative pl-6">
+            <ProfileCard
+              name=""
+              title=""
+              handle="javicodes"
+              status="Online"
+              contactText="Contact Me"
+              avatarUrl="/images/1.png"
+              showUserInfo={false}
+              enableTilt={true}
+              enableMobileTilt={false}
+              onContactClick={() => console.log("Contact clicked")}
+              behindGlowColor="rgba(125, 190, 255, 0.67)"
+              iconUrl="/assets/iconpattern.png"
+              behindGlowEnabled
+              innerGradient="linear-gradient(145deg,#60496e8c 0%,#71C4FF44 100%)"
+            />
           </div>
           <div className="w-[55%]">
             <TypeWriter

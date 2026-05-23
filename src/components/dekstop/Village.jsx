@@ -299,17 +299,20 @@ const Village = () => {
           left: positionAndroid.x + "px",
           top: positionAndroid.y + "px",
         }}
-        className="w-20"
+        className="w-20 "
       >
-        <div className="flex md:hidden flex-col items-center cursor-move select-none ">
+        <div className="flex md:hidden flex-col items-center cursor-move select-none w-full  ">
           <a href="https://webvillage.netlify.app/" target="_blank">
-            <img
-              src="/images/safari.png"
-              alt="cpns.com"
-              draggable={false}
-              className="w-20"
-            />
-            <p className="font-semibold text-white ">Village.com</p>
+            <div className="rounded-full w-full overflow-hidden p-1 flex items-center justify-center">
+              <img
+                src="/images/dekstop/rv-logo.jpg"
+                alt="cpns.com"
+                draggable={false}
+                className="w-18 mx-auto"
+              />
+            </div>
+
+            <p className="font-semibold text-white text-center">Village</p>
           </a>
         </div>
       </div>

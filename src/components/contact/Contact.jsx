@@ -50,6 +50,61 @@ const Contact = () => {
     };
   });
 
+  //send message
+  const [form, setForm] = useState({
+    name: "",
+    email: "",
+    nohp: "",
+    message: "",
+  });
+
+  const [loading, setLoading] = useState(false);
+
+  const handleChange = (e) => {
+    const { name, value } = e.target;
+
+    setForm((prev) => ({
+      ...prev,
+      [name]: value,
+    }));
+  };
+
+  const handleSubmit = async (e) => {
+    e.preventDefault();
+    setLoading(true);
+
+    const scriptURL =
+      "https://script.google.com/macros/s/AKfycbwNZAWJgSIWpil3C5WXVA44p5SDYAuF7DUecWdrw-hoCY8KEygTCzhGjBOVtzTDT6EnJg/exec";
+
+    const formData = new FormData();
+
+    formData.append("nama", form.name);
+    formData.append("mail", form.email);
+    formData.append("hp", form.nohp);
+    formData.append("pesan", form.message);
+
+    try {
+      await fetch(scriptURL, {
+        method: "POST",
+        body: formData,
+      });
+
+      alert("Pesan Anda berhasil dikirim!");
+
+      setForm({
+        name: "",
+        email: "",
+        nohp: "",
+        message: "",
+      });
+    } catch (error) {
+      console.error(error);
+      alert("Terjadi kesalahan. Silakan coba lagi.");
+    } finally {
+      setLoading(false);
+    }
+  };
+
   if (!win.isOpen) return null; // ⛔ penting!
   return (
     <div>
@@ -58,7 +113,9 @@ const Contact = () => {
         style={{
           zIndex: win.zIndex,
           left: position.x + 25,
-          top: position.y + 45,
+          top: position.y - 25,
+          width: "34rem",
+          height: "46rem",
         }}
         className="hidden md:flex md:flex-col absolute w-[520px] bg-white rounded-xl shadow-lg overflow-hidden"
       >
@@ -89,7 +146,7 @@ const Contact = () => {
         {/* CONTENT */}
         <div
           onMouseDown={() => dispatch(focusWindow("contact"))}
-          className="p-4"
+          className="p-4 overflow-y-scroll scroll-smooth"
         >
           <div className="space-y-5 w-20 h-20 overflow-hidden rounded-full">
             <img src="/images/akbar.JPG" alt="Akbar" className="w-20" />
@@ -114,6 +171,90 @@ const Contact = () => {
               </li>
             ))}
           </ul>
+          {/* send message */}
+          <div className="px-5 mt-10 pb-3 border border-gray-500 rounded-2xl">
+            <h2 className="text-3xl  font-bold text-gray-900 my-5 text-center font-poppins ">
+              Send Me a Message
+            </h2>
+            <form onSubmit={handleSubmit} className="space-y-6 px-2">
+              {/* Name */}
+              <div>
+                <label className="block text-sm font-medium text-gray-600 mb-2">
+                  Name
+                </label>
+
+                <input
+                  type="text"
+                  name="name"
+                  value={form.name}
+                  onChange={handleChange}
+                  placeholder="Input your name"
+                  required
+                  className="w-full  border border-slate-700 text-gray-600 placeholder-slate-500 rounded-xl px-4 py-3 outline-none focus:ring-2 focus:ring-sky-500 focus:border-transparent transition"
+                />
+              </div>
+
+              {/* Email */}
+              <div>
+                <label className="block text-sm font-medium text-gray-600 mb-2">
+                  Email
+                </label>
+
+                <input
+                  type="email"
+                  name="email"
+                  value={form.email}
+                  onChange={handleChange}
+                  placeholder="your email"
+                  required
+                  className="w-full  border border-slate-700 text-black placeholder-slate-500 rounded-xl px-4 py-3 outline-none focus:ring-2 focus:ring-sky-500 focus:border-transparent transition"
+                />
+              </div>
+
+              {/* Phone */}
+              <div>
+                <label className="block text-sm font-medium  text-gray-600 mb-2">
+                  No HP
+                </label>
+
+                <input
+                  type="text"
+                  name="nohp"
+                  value={form.nohp}
+                  onChange={handleChange}
+                  placeholder="08xxxxxxxxxx"
+                  required
+                  className="w-full border border-slate-700 text-black placeholder-slate-500 rounded-xl px-4 py-3 outline-none focus:ring-2 focus:ring-sky-500 focus:border-transparent transition"
+                />
+              </div>
+
+              {/* Message */}
+              <div>
+                <label className="block text-sm font-medium  text-gray-600 mb-2">
+                  Message
+                </label>
+
+                <textarea
+                  rows={5}
+                  name="message"
+                  value={form.message}
+                  onChange={handleChange}
+                  placeholder="Write your message..."
+                  required
+                  className="w-full  border border-slate-700 text-black placeholder-slate-500 rounded-xl px-4 py-3 outline-none focus:ring-2 focus:ring-sky-500 focus:border-transparent transition resize-none"
+                />
+              </div>
+
+              {/* Button */}
+              <button
+                type="submit"
+                disabled={loading}
+                className="w-full bg-sky-500 hover:bg-sky-600 disabled:bg-slate-700 disabled:cursor-not-allowed text-white font-semibold py-3 rounded-xl transition duration-300 shadow-lg hover:shadow-sky-500/30"
+              >
+                {loading ? "Sending..." : "Send Message"}
+              </button>
+            </form>
+          </div>
         </div>
       </div>
 
@@ -154,12 +295,12 @@ const Contact = () => {
             Got an idea? A bug to squash? Or just wanna talk tech? I'm in.
           </p>
 
-          <ul className="flex flex-col gap-5 mt-10 mb-10 i">
+          <ul className="flex mt-5">
             {socials.map(({ id, bg, link, icon, text }) => (
               <li
                 key={id}
                 style={{ backgroundColor: bg }}
-                className="p-5 rounded-2xl"
+                className="p-5 rounded-2xl m-1"
               >
                 <a
                   href={link}
@@ -168,11 +309,95 @@ const Contact = () => {
                   className="flex items-center"
                 >
                   <img src={icon} alt={text} className="size-10 mr-5" />
-                  <p className="font-poppins mt-1 font-bold text-2xl">{text}</p>
                 </a>
               </li>
             ))}
           </ul>
+
+          {/* send message */}
+          <div className="px-5 mt-10 pb-3 border border-gray-500 rounded-2xl">
+            <h2 className="text-3xl  font-bold text-gray-900 my-5 text-center font-poppins ">
+              Send Me a Message
+            </h2>
+            <form onSubmit={handleSubmit} className="space-y-6 px-2">
+              {/* Name */}
+              <div>
+                <label className="block text-sm font-medium text-gray-600 mb-2">
+                  Name
+                </label>
+
+                <input
+                  type="text"
+                  name="name"
+                  value={form.name}
+                  onChange={handleChange}
+                  placeholder="Input your name"
+                  required
+                  className="w-full  border border-slate-700 text-gray-600 placeholder-slate-500 rounded-xl px-4 py-3 outline-none focus:ring-2 focus:ring-sky-500 focus:border-transparent transition"
+                />
+              </div>
+
+              {/* Email */}
+              <div>
+                <label className="block text-sm font-medium text-gray-600 mb-2">
+                  Email
+                </label>
+
+                <input
+                  type="email"
+                  name="email"
+                  value={form.email}
+                  onChange={handleChange}
+                  placeholder="your email"
+                  required
+                  className="w-full  border border-slate-700 text-black placeholder-slate-500 rounded-xl px-4 py-3 outline-none focus:ring-2 focus:ring-sky-500 focus:border-transparent transition"
+                />
+              </div>
+
+              {/* Phone */}
+              <div>
+                <label className="block text-sm font-medium  text-gray-600 mb-2">
+                  No HP
+                </label>
+
+                <input
+                  type="text"
+                  name="nohp"
+                  value={form.nohp}
+                  onChange={handleChange}
+                  placeholder="08xxxxxxxxxx"
+                  required
+                  className="w-full border border-slate-700 text-black placeholder-slate-500 rounded-xl px-4 py-3 outline-none focus:ring-2 focus:ring-sky-500 focus:border-transparent transition"
+                />
+              </div>
+
+              {/* Message */}
+              <div>
+                <label className="block text-sm font-medium  text-gray-600 mb-2">
+                  Message
+                </label>
+
+                <textarea
+                  rows={5}
+                  name="message"
+                  value={form.message}
+                  onChange={handleChange}
+                  placeholder="Write your message..."
+                  required
+                  className="w-full  border border-slate-700 text-black placeholder-slate-500 rounded-xl px-4 py-3 outline-none focus:ring-2 focus:ring-sky-500 focus:border-transparent transition resize-none"
+                />
+              </div>
+
+              {/* Button */}
+              <button
+                type="submit"
+                disabled={loading}
+                className="w-full bg-sky-500 hover:bg-sky-600 disabled:bg-slate-700 disabled:cursor-not-allowed text-white font-semibold py-3 rounded-xl transition duration-300 shadow-lg hover:shadow-sky-500/30"
+              >
+                {loading ? "Sending..." : "Send Message"}
+              </button>
+            </form>
+          </div>
         </div>
       </div>
     </div>
