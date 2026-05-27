@@ -140,16 +140,18 @@ const SafariBody = () => {
       {/* experience */}
       <div className="flex flex-col w-full max-w-4xl mx-auto mt-20 pl-5 items-center justify-center">
         <div className="w-full text-center">
+          {/* hp */}
           <div
             className=" relative inline-block 
             after:content-[''] after:absolute after:left-0 after:bottom-0 
             after:w-full after:h-[2px] after:bg-sky-400 
             after:scale-x-0 after:origin-left 
             after:transition-transform after:duration-300 
-            hover:after:scale-x-100"
+            hover:after:scale-x-100 font-semibold"
           >
             <h3 className="text-4xl text-white">Experience Work</h3>
           </div>
+
           <div
             className={clsx(
               "about-subtext text-center px-4 max-w-xl mx-auto mt-2",

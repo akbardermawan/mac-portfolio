@@ -119,7 +119,7 @@ const Village = () => {
   // =========================
   const handleDoubleClick = () => {
     if (!movedRef.current) {
-      window.open("https://akbarcpns.netlify.app/", "_blank");
+      window.open("https://webvillage.netlify.app/", "_blank");
     }
   };
 

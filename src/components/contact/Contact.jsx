@@ -146,7 +146,7 @@ const Contact = () => {
         {/* CONTENT */}
         <div
           onMouseDown={() => dispatch(focusWindow("contact"))}
-          className="p-4 overflow-y-scroll scroll-smooth"
+          className="px-4 pt-4 pb-10 overflow-y-scroll scroll-smooth"
         >
           <div className="space-y-5 w-20 h-20 overflow-hidden rounded-full">
             <img src="/images/akbar.JPG" alt="Akbar" className="w-20" />
@@ -268,7 +268,7 @@ const Contact = () => {
       >
         {/* HEADER */}
         <div className="w-full">
-          <div className="flex p-5 justify-between items-center">
+          <div className="flex p-5 justify-between items-center border border-t-white border-x-white border-b-gray-200">
             <div
               className="flex items-center cursor-pointer"
               onClick={() => dispatch(closeWindow("contact"))}
@@ -285,7 +285,7 @@ const Contact = () => {
         </div>
 
         {/* CONTENT */}
-        <div className="p-4 overflow-x-hidden overflow-y-scroll">
+        <div className="px-4 pt-2 pb-10 overflow-x-hidden overflow-y-scroll">
           <div className="space-y-5 w-20 h-20 overflow-hidden rounded-full">
             <img src="/images/akbar.JPG" alt="Akbar" className="w-20" />
           </div>

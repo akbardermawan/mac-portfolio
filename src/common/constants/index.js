@@ -117,6 +117,49 @@ const WORK_LOCATION = {
         },
       ],
     },
+    {
+      id: 6,
+      name: "Village Aplication",
+      icon: "/images/folder.png",
+      kind: "folder",
+      position: "top-10 left-5", //icon position insider Finder
+      windowPosition: "top-[15vh] right-20", //optional: Finder
+      children: [
+        {
+          id: 1,
+          name: "Village.txt",
+          icon: "/images/txt.png",
+          kind: "file",
+          fileType: "txt",
+          windowKey: "textandphoto",
+          position: "top-10 left-5",
+          description: [
+            "I developed a modern village website with a responsive design that works seamlessly across all devices. The website is user-friendly, easy to navigate, and designed to provide clear access to village information and services for the community.",
+            "https://webvillage.netlify.app/",
+          ],
+        },
+        {
+          id: 2,
+          name: "Village.com",
+          icon: "/images/safari.png",
+          kind: "file",
+          fileType: "url",
+          position: "top-10 left-5",
+          href: "https://webvillage.netlify.app/",
+        },
+        {
+          id: 3,
+          name: "Village.png",
+          icon: "/images/image.png",
+          kind: "file",
+          fileType: "img", // ✅ WAJIB
+          windowKey: "textandphoto",
+          position: "top-10 left-5", //icon position insider Finder
+          windowPosition: "top-[15vh] right-20", //optional: Finder
+          src: "/images/dekstop/village.JPG",
+        },
+      ],
+    },
   ],
 };
 const ABOUT_LOCATION = {

@@ -102,7 +102,7 @@ const Photos = () => {
         className=" absolute top-0 left-0 w-full h-screen bg-white  overflow-hidden flex flex-col md:hidden"
       >
         {/* HEADER */}
-        <div className="w-full">
+        <div className="w-full border border-t-white border-x-white border-b-gray-200 mb-1">
           <div className="flex p-5 justify-between items-center">
             <div
               className="flex items-center cursor-pointer"
