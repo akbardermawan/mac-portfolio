@@ -264,7 +264,7 @@ const Contact = () => {
         style={{
           zIndex: win.zIndex,
         }}
-        className=" absolute top-0 left-0 w-full h-screen bg-white  overflow-hidden flex flex-col md:hidden"
+        className=" absolute top-0 left-0 w-full h-screen bg-white pb-6  overflow-hidden flex flex-col md:hidden"
       >
         {/* HEADER */}
         <div className="w-full">
@@ -315,7 +315,7 @@ const Contact = () => {
           </ul>
 
           {/* send message */}
-          <div className="px-5 mt-10 pb-3 border border-gray-500 rounded-2xl">
+          <div className="px-5 mt-10 pb-4 border border-gray-500 rounded-2xl">
             <h2 className="text-3xl  font-bold text-gray-900 my-5 text-center font-poppins ">
               Send Me a Message
             </h2>
