@@ -51,6 +51,7 @@ const WINDOW_CONFIG = {
   imgfile: { isOpen: false, zIndex: INITIAL_Z_INDEX, data: null },
   cpns: { isOpen: false, zIndex: INITIAL_Z_INDEX, data: null },
   village: { isOpen: false, zIndex: INITIAL_Z_INDEX, data: null },
+  music: { isOpen: true, zIndex: INITIAL_Z_INDEX, data: null },
 };
 
 const navLinks = [
@@ -578,6 +579,21 @@ const imagesGalry = [
   },
 ];
 
+const playlist_music = [
+  {
+    title: "AL-WAQI'AH",
+    artist: "Muzammil Hasballah",
+    cover: "/images/akbar-4.JPG",
+    src: "/music/1.mp3",
+  },
+  {
+    title: "AR-RAHMAN",
+    artist: "Muzammil Hasballah",
+    cover: "/images/akbar-6.JPG",
+    src: "/music/2.mp3",
+  },
+];
+
 export {
   dockApps,
   INITIAL_Z_INDEX,
@@ -596,4 +612,5 @@ export {
   ABOUT_LOCATION_Android,
   imagesGalry,
   Archive,
+  playlist_music,
 };
