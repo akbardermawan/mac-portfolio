@@ -51,7 +51,8 @@ const WINDOW_CONFIG = {
   imgfile: { isOpen: false, zIndex: INITIAL_Z_INDEX, data: null },
   cpns: { isOpen: false, zIndex: INITIAL_Z_INDEX, data: null },
   village: { isOpen: false, zIndex: INITIAL_Z_INDEX, data: null },
-  music: { isOpen: true, zIndex: INITIAL_Z_INDEX, data: null },
+  calendar: { isOpen: false, zIndex: INITIAL_Z_INDEX, data: null },
+  music: { isOpen: false, zIndex: INITIAL_Z_INDEX, data: null },
 };
 
 const navLinks = [

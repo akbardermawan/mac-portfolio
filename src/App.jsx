@@ -16,6 +16,7 @@ import "slick-carousel/slick/slick-theme.css";
 import Cpns from "./components/dekstop/Cpns";
 import Village from "./components/dekstop/Village";
 import Music from "./components/dekstop/music/Music";
+import Calendar from "./components/dekstop/calendar/Calendar";
 
 function App() {
   return (
@@ -35,6 +36,7 @@ function App() {
       <Cpns />
       <Village />
       <Music />
+      <Calendar />
     </main>
   );
 }

@@ -35,7 +35,12 @@ const Navbar = () => {
             </li>
           ))}
         </ul>
-        <time>{dayjs().format("ddd MMM D h:mm A")} </time>
+        <time
+          className="cursor-pointer"
+          onClick={() => dispatch(toggleWindow("calendar"))}
+        >
+          {dayjs().format("ddd MMM D h:mm A")}{" "}
+        </time>
       </div>
     </nav>
   );

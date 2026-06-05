@@ -6,6 +6,7 @@ import { useSelector, useDispatch } from "react-redux";
 import {
   closeWindow,
   focusWindow,
+  toggleWindow,
 } from "../../../common/store/state/windowSlice.js";
 
 import {
@@ -30,11 +31,19 @@ const Music = () => {
   const audioRef = useRef(null);
 
   // =========================
+  // DESKTOP ICON POSITION
+  // =========================
+  const [iconPosition, setIconPosition] = useState({
+    x: 53,
+    y: 600,
+  });
+
+  // =========================
   // WINDOW POSITION
   // =========================
   const [position, setPosition] = useState({
-    x: 20,
-    y: 60,
+    right: 20,
+    top: 120,
   });
 
   // =========================
@@ -45,7 +54,37 @@ const Music = () => {
   const dispatch = useDispatch();
 
   // =========================
-  // DRAG WINDOW
+  // ICON DRAG
+  // =========================
+  const draggingIconRef = useRef(false);
+
+  const iconOffsetRef = useRef({
+    x: 0,
+    y: 0,
+  });
+
+  const handleIconMouseDown = (e) => {
+    if (e.button !== 0) return;
+
+    e.preventDefault();
+
+    draggingIconRef.current = true;
+
+    iconOffsetRef.current = {
+      x: e.clientX - iconPosition.x,
+      y: e.clientY - iconPosition.y,
+    };
+  };
+
+  // =========================
+  // DOUBLE CLICK ICON
+  // =========================
+  const handleDoubleClick = () => {
+    dispatch(toggleWindow("music"));
+  };
+
+  // =========================
+  // WINDOW DRAG
   // =========================
   const draggingWindowRef = useRef(false);
 
@@ -67,15 +106,29 @@ const Music = () => {
     dispatch(focusWindow("music"));
   };
 
+  // =========================
+  // GLOBAL MOUSE MOVE
+  // =========================
   const handleMouseMove = (e) => {
+    // DRAG ICON
+    if (draggingIconRef.current) {
+      setIconPosition({
+        x: e.clientX - iconOffsetRef.current.x,
+        y: e.clientY - iconOffsetRef.current.y,
+      });
+
+      return;
+    }
+
+    // DRAG WINDOW
     if (!draggingWindowRef.current) return;
 
     const deltaX = e.clientX - windowOffsetRef.current.x;
     const deltaY = e.clientY - windowOffsetRef.current.y;
 
     setPosition((prev) => ({
-      x: prev.x - deltaX,
-      y: prev.y + deltaY,
+      right: prev.right - deltaX,
+      top: prev.top + deltaY,
     }));
 
     windowOffsetRef.current = {
@@ -86,6 +139,7 @@ const Music = () => {
 
   const handleMouseUp = () => {
     draggingWindowRef.current = false;
+    draggingIconRef.current = false;
   };
 
   // =========================
@@ -147,12 +201,10 @@ const Music = () => {
     };
 
     audio.addEventListener("timeupdate", updateTime);
-
     audio.addEventListener("loadedmetadata", loadedMetadata);
 
     return () => {
       audio.removeEventListener("timeupdate", updateTime);
-
       audio.removeEventListener("loadedmetadata", loadedMetadata);
     };
   }, []);
@@ -162,12 +214,10 @@ const Music = () => {
   // =========================
   useEffect(() => {
     window.addEventListener("mousemove", handleMouseMove);
-
     window.addEventListener("mouseup", handleMouseUp);
 
     return () => {
       window.removeEventListener("mousemove", handleMouseMove);
-
       window.removeEventListener("mouseup", handleMouseUp);
     };
   }, []);
@@ -176,12 +226,9 @@ const Music = () => {
   // FORMAT TIME
   // =========================
   const formatTime = (time) => {
-    if (!time || Number.isNaN(time)) {
-      return "0:00";
-    }
+    if (!time || Number.isNaN(time)) return "0:00";
 
     const minutes = Math.floor(time / 60);
-
     const seconds = Math.floor(time % 60);
 
     return `${minutes}:${seconds.toString().padStart(2, "0")}`;
@@ -192,150 +239,163 @@ const Music = () => {
   // =========================
   const progress = duration > 0 ? (currentTime / duration) * 100 : 0;
 
-  // =========================
-  // WINDOW CLOSED
-  // =========================
-  if (!win?.isOpen) return null;
-
   return (
     <>
+      {/* DESKTOP ICON */}
       <div
         style={{
           position: "absolute",
-          right: `${position.x}px`,
-          top: `${position.y}px`,
-          zIndex: win?.zIndex || 1000,
+          left: `${iconPosition.x}px`,
+          top: `${iconPosition.y}px`,
+          zIndex: 100,
         }}
-        onMouseDown={() => dispatch(focusWindow("music"))}
-        className="
-          hidden md:flex md:flex-col
-          w-[320px] lg:w-[350px]
-          rounded-3xl
-          overflow-hidden
-          backdrop-blur-xl
-          bg-white/20
-          border border-white/20
-          shadow-2xl
-          select-none
-        "
       >
-        {/* HEADER */}
         <div
-          onMouseDown={handleWindowMouseDown}
-          className="flex items-center p-3 cursor-move"
+          onMouseDown={handleIconMouseDown}
+          onDoubleClick={handleDoubleClick}
+          className="hidden md:flex flex-col items-center cursor-move select-none"
         >
-          <div className="flex gap-2">
-            <button
-              onClick={() => dispatch(closeWindow("music"))}
-              className="w-3 h-3 rounded-full bg-red-500 cursor-pointer"
-            />
-
-            <button className="w-3 h-3 rounded-full bg-yellow-500" />
-
-            <button className="w-3 h-3 rounded-full bg-green-500" />
-          </div>
-        </div>
-
-        {/* COVER */}
-        <div className="px-5">
           <img
-            src={playlist_music[currentSong].cover}
-            alt={playlist_music[currentSong].title}
-            className="
-              w-full
-              h-[160px]
-              lg:h-[180px]
-              object-cover
-              rounded-2xl
-              shadow-lg
-              opacity-70
-            "
+            src="/images/music.png"
+            alt="Music"
+            draggable={false}
+            className="cursor-pointer hover:scale-110 active:scale-95 w-18"
           />
-        </div>
 
-        {/* INFO */}
-        <div className="px-5 pt-4 text-center">
-          <h2 className="font-semibold text-white text-lg truncate">
-            {playlist_music[currentSong].title}
-          </h2>
-
-          <p className="text-sm text-white/70">
-            {playlist_music[currentSong].artist}
-          </p>
-        </div>
-
-        {/* PROGRESS */}
-        <div className="px-5 mt-5">
-          <div
-            className="
-              w-full
-              h-1
-              bg-white/20
-              rounded-full
-              overflow-hidden
-              cursor-pointer
-            "
-            onClick={(e) => {
-              if (!audioRef.current) return;
-
-              const rect = e.currentTarget.getBoundingClientRect();
-
-              const percent = (e.clientX - rect.left) / rect.width;
-
-              audioRef.current.currentTime = percent * duration;
-            }}
-          >
-            <div
-              className="h-full bg-white rounded-full"
-              style={{
-                width: `${progress}%`,
-              }}
-            />
-          </div>
-
-          <div className="flex justify-between mt-2 text-xs text-white/60">
-            <span>{formatTime(currentTime)}</span>
-
-            <span>{formatTime(duration)}</span>
-          </div>
-        </div>
-
-        {/* CONTROLS */}
-        <div className="flex justify-center items-center gap-8 py-6">
-          <button
-            onClick={prevSong}
-            className="text-white text-2xl hover:scale-110 transition"
-          >
-            <FaAngleDoubleLeft />
-          </button>
-
-          <button
-            onClick={togglePlay}
-            className="
-              w-14
-              h-14
-              rounded-full
-              bg-white
-              text-black
-              flex
-              items-center
-              justify-center
-              shadow-lg
-              hover:scale-105
-              transition
-            "
-          >
-            {isPlaying ? <FaPause size={18} /> : <FaPlay size={18} />}
-          </button>
-
-          <button
-            onClick={nextSong}
-            className="text-white text-2xl hover:scale-110 transition"
-          >
-            <FaAngleDoubleRight />
-          </button>
+          <p className="text-white font-semibold">Music</p>
         </div>
       </div>
+
+      {/* WINDOW */}
+      {win?.isOpen && (
+        <div
+          style={{
+            position: "absolute",
+            right: `${position.right}px`,
+            top: `${position.top}px`,
+            zIndex: win?.zIndex || 1000,
+          }}
+          onMouseDown={() => dispatch(focusWindow("music"))}
+          className="
+            hidden md:flex md:flex-col
+            w-[280px]
+            rounded-3xl
+            overflow-hidden
+            backdrop-blur-xl
+            bg-white/20
+            border border-white/20
+            shadow-2xl
+            select-none
+          "
+        >
+          {/* HEADER */}
+          <div
+            onMouseDown={handleWindowMouseDown}
+            className="flex items-center p-3 cursor-move"
+          >
+            <div className="flex gap-2">
+              <button
+                onClick={() => dispatch(closeWindow("music"))}
+                className="w-3 h-3 rounded-full bg-red-500 cursor-pointer"
+              />
+
+              <button className="w-3 h-3 rounded-full bg-yellow-500" />
+
+              <button className="w-3 h-3 rounded-full bg-green-500" />
+            </div>
+          </div>
+
+          {/* COVER */}
+          <div className="px-5">
+            <img
+              src={playlist_music[currentSong].cover}
+              alt={playlist_music[currentSong].title}
+              className="
+                w-full
+                h-[100px]
+                object-cover
+                rounded-2xl
+                shadow-lg
+                opacity-70
+              "
+            />
+          </div>
+
+          {/* INFO */}
+          <div className="px-5 pt-2 text-center">
+            <h2 className="font-semibold text-white text-lg truncate">
+              {playlist_music[currentSong].title}
+            </h2>
+
+            <p className="text-sm text-white/70">
+              {playlist_music[currentSong].artist}
+            </p>
+          </div>
+
+          {/* PROGRESS */}
+          <div className="px-5 mt-1">
+            <div
+              className="w-full h-1 bg-white/20 rounded-full overflow-hidden cursor-pointer"
+              onClick={(e) => {
+                if (!audioRef.current) return;
+
+                const rect = e.currentTarget.getBoundingClientRect();
+                const percent = (e.clientX - rect.left) / rect.width;
+
+                audioRef.current.currentTime = percent * duration;
+              }}
+            >
+              <div
+                className="h-full bg-white rounded-full"
+                style={{
+                  width: `${progress}%`,
+                }}
+              />
+            </div>
+
+            <div className="flex justify-between mt-2 text-xs text-white/60">
+              <span>{formatTime(currentTime)}</span>
+              <span>{formatTime(duration)}</span>
+            </div>
+          </div>
+
+          {/* CONTROLS */}
+          <div className="flex justify-center items-center gap-8 py-2">
+            <button
+              onClick={prevSong}
+              className="text-white text-2xl hover:scale-110 transition"
+            >
+              <FaAngleDoubleLeft />
+            </button>
+
+            <button
+              onClick={togglePlay}
+              className="
+                w-12
+                h-12
+                rounded-full
+                bg-white
+                text-black
+                flex
+                items-center
+                justify-center
+                shadow-lg
+                hover:scale-105
+                transition
+              "
+            >
+              {isPlaying ? <FaPause size={16} /> : <FaPlay size={16} />}
+            </button>
+
+            <button
+              onClick={nextSong}
+              className="text-white text-2xl hover:scale-110 transition"
+            >
+              <FaAngleDoubleRight />
+            </button>
+          </div>
+        </div>
+      )}
 
       {/* AUDIO */}
       <audio ref={audioRef} onEnded={nextSong}>
