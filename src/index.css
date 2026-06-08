@@ -8,7 +8,8 @@ body {
   width: 100dvw;
   overflow: hidden;
   height: 100dvh;
-  background-image: url("/images/wallpaper.png");
+
+  /* background-image: url("/images/wallpaper.png"); */
   background-size: cover;
   background-repeat: no-repeat;
   background-position: center;

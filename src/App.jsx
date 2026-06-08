@@ -17,12 +17,23 @@ import Cpns from "./components/dekstop/Cpns";
 import Village from "./components/dekstop/Village";
 import Music from "./components/dekstop/music/Music";
 import Calendar from "./components/dekstop/calendar/Calendar";
+import Aurora from "./components/background/Aurora";
 
 function App() {
   return (
-    <main className="w-full h-screen relative">
-      <Navbar />
+    <main className="w-full h-screen relative ">
+      {/* Background */}
+      <div className="absolute inset-0 -z-10 bg-black">
+        <Aurora
+          colorStops={["#678dff", "#05fafa", "#2762ff"]}
+          blend={0.5}
+          amplitude={1.0}
+          speed={1}
+        />
+      </div>
 
+      {/* Foreground */}
+      <Navbar />
       <Welcome />
       <Dock />
       <Finder />

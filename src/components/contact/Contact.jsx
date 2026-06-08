@@ -151,7 +151,7 @@ const Contact = () => {
           <div className="space-y-5 w-20 h-20 overflow-hidden rounded-full">
             <img src="/images/akbar.JPG" alt="Akbar" className="w-20" />
           </div>
-          <h3 className="font-poppins mt-1">Let's Connect</h3>
+          <h3 className="font-poppins mt-2">Let's Connect</h3>
           <p className="font-poppins"> @akbardermawan27.gmail.com</p>
           <p className="font-roboto">
             Got an idea? A bug to squash? Or just wanna talk tech? I'm in.
@@ -249,7 +249,7 @@ const Contact = () => {
               <button
                 type="submit"
                 disabled={loading}
-                className="w-full bg-sky-500 hover:bg-sky-600 disabled:bg-slate-700 disabled:cursor-not-allowed text-white font-semibold py-3 rounded-xl transition duration-300 shadow-lg hover:shadow-sky-500/30"
+                className="w-full bg-blue-700 hover:bg-blue-500 disabled:bg-slate-700 disabled:cursor-not-allowed text-white hover:text-xl font-semibold py-3 rounded-xl transition duration-300 shadow-lg hover:shadow-sky-500/30 cursor-pointer"
               >
                 {loading ? "Sending..." : "Send Message"}
               </button>
