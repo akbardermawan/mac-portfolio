@@ -1,5 +1,7 @@
 import React from "react";
 import RotatingText from "./RotatingText";
+import DecryptedText from "./DecryptedText";
+import { motion } from "framer-motion";
 
 const IntroAndroid = () => {
   return (
@@ -7,11 +9,21 @@ const IntroAndroid = () => {
       <div className="w-full h-full ">
         <div className="w-full h-full flex  justify-center flex-col">
           <div>
-            <h1 className="md:text-2xl text-lg  text-gray-300 font-bold font-poppins">
-              AKBAR DERMAWAN MAHBUBILLAH
-            </h1>
+            <DecryptedText
+              text="AKBAR DERMAWAN MAHBUBILLAH"
+              animateOn="view"
+              revealDirection="center"
+              className="text-lg md:text-2xl text-gray-300 font-bold"
+              encryptedClassName="text-lg md:text-2xl text-gray-300"
+              parentClassName="tracking-wider"
+            />
           </div>
-          <div>
+          <motion.div
+            initial={{ opacity: 0, y: 100 }}
+            whileInView={{ opacity: 1, y: 0 }}
+            viewport={{ once: true, amount: 0.4 }}
+            transition={{ duration: 0.8, delay: 0.2 }}
+          >
             <p className="md:text-6xl text-white  font-poppins text-4xl">
               Web Developer
             </p>
@@ -29,7 +41,7 @@ const IntroAndroid = () => {
                 rotationInterval={2000}
               />
             </h2>
-          </div>
+          </motion.div>
         </div>
       </div>
     </div>

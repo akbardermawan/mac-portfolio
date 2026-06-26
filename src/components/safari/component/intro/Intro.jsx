@@ -2,6 +2,8 @@ import React from "react";
 import RotatingText from "./RotatingText";
 import { useSelector } from "react-redux";
 import clsx from "clsx";
+import DecryptedText from "./DecryptedText";
+import { motion } from "framer-motion";
 
 const Intro = () => {
   const isFullscreen = useSelector((state) => state.safari.isFullscreen);
@@ -17,26 +19,38 @@ const Intro = () => {
             className="relative z-10 text-6xl md:text-7xl xl:text-9xl 
              font-extrabold text-transparent bg-clip-text 
              bg-gradient-to-b from-gray-400/80 xl:from-gray-400/5 to-gray-800/10 
-             drop-shadow-[0_0_10px_rgba(56,189,248,0.5)] tracking-widest -right-85"
+             drop-shadow-[0_0_10px_rgba(56,189,248,0.5)] tracking-widest -right-75"
           >
             アクバル
           </h1>
-          <p> Welcome to My Portfolio</p>
+          <motion.p
+            initial={{ opacity: 0, y: 20 }}
+            animate={{ opacity: 1, y: 0 }}
+            transition={{ delay: 0.8, duration: 1 }}
+            className="absolute bottom-24 text-gray-600/40 text-lg tracking-widest"
+          >
+            Welcome to My Portfolio
+          </motion.p>
         </div>
       </div>
       <div className="w-full h-full z-10 absolute">
         <div className="w-full h-full flex  justify-center flex-col">
           <div>
-            <h1
-              className={clsx(
-                isFullscreen ? "md:text-2xl xl:text-4xl" : "md:text-2xl",
-                "text-lg  text-gray-300 font-bold font-poppins",
-              )}
-            >
-              AKBAR DERMAWAN MAHBUBILLAH
-            </h1>
+            <DecryptedText
+              text="AKBAR DERMAWAN MAHBUBILLAH"
+              animateOn="view"
+              revealDirection="center"
+              className="text-lg md:text-2xl text-gray-300 font-bold"
+              encryptedClassName="text-lg md:text-2xl text-gray-300"
+              parentClassName="tracking-wider"
+            />
           </div>
-          <div>
+          <motion.div
+            initial={{ opacity: 0, y: 100 }}
+            whileInView={{ opacity: 1, y: 0 }}
+            viewport={{ once: true, amount: 0.4 }}
+            transition={{ duration: 0.8, delay: 0.2 }}
+          >
             <p
               className={clsx(
                 isFullscreen ? "md:text-6xl xl:text-8xl" : "md:text-6xl",
@@ -59,7 +73,7 @@ const Intro = () => {
                 rotationInterval={2000}
               />
             </h2>
-          </div>
+          </motion.div>
         </div>
       </div>
     </div>

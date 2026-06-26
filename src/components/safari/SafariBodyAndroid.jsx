@@ -24,7 +24,7 @@ const SafariBodyAndroid = () => {
       {/* About */}
       <div className="w-full max-w-4xl mx-auto mt-5 px-2">
         {/* teks dan efek hover */}
-        <div
+        <motion.div
           className="relative z-10 inline-block 
              after:content-[''] after:absolute after:left-0 after:bottom-0 
              after:w-full after:h-[2px] after:bg-sky-400 
@@ -32,26 +32,38 @@ const SafariBodyAndroid = () => {
               after:transition-transform after:duration-300 
               hover:after:scale-x-100 zoom-in
               bottom-4 left-3 "
+          initial={{ opacity: 0, y: 100 }}
+          whileInView={{ opacity: 1, y: 0 }}
+          viewport={{ once: true, amount: 0.4 }}
+          transition={{ duration: 0.8, delay: 0.2 }}
         >
-          <h2 className="text-white text-4xl md:text-6xl font-light">
+          <h2 className="text-white text-4xl md:text-6xl font-bold">
             About <span className="font-bold text-sky-400">Me</span>
           </h2>
-        </div>
+        </motion.div>
 
         <div className="flex w-full max-w-4xl mx-auto mt-5">
           <div className="w-[45%] relative">
             <PhotoAbout />
           </div>
-          <div className="w-[55%]">
+          <motion.div
+            className="w-[55%]"
+            initial={{ opacity: 0, x: 100 }}
+            whileInView={{ opacity: 1, x: 0 }}
+            viewport={{ once: true, amount: 0.4 }}
+            transition={{ duration: 0.8, delay: 0.2 }}
+          >
             <h2 className="text-white text-xl font-poppins font-bold">
               Akbar Dermawan
             </h2>
+
             <div className="mt-2 md:mt-4 mx-auto pr-3">
               <p className="text-sm md:text-xl md:first-letter:text-3xl md:pr-5 text-sky-300 mx-auto text-justify indent-8  first-letter:font-bold first-letter:mr-1">
                 My website is pretty simple — nothing too fancy, but it works
                 smoothly and is really easy for anyone to use 😄
               </p>
             </div>
+
             <div className="flex gap-4">
               <div className="flex mt-3">
                 <a
@@ -72,13 +84,19 @@ const SafariBodyAndroid = () => {
                 </a>
               </div>
             </div>
-          </div>
+          </motion.div>
         </div>
       </div>
 
       {/* Skill */}
       <div className="flex flex-col w-full max-w-4xl mx-auto mt-20 px-5">
-        <div className="w-full">
+        <motion.div
+          className="w-full"
+          initial={{ opacity: 0, y: 100 }}
+          whileInView={{ opacity: 1, y: 0 }}
+          viewport={{ once: true, amount: 0.4 }}
+          transition={{ duration: 0.8, delay: 0.2 }}
+        >
           <div
             className=" relative inline-block 
             after:content-[''] after:absolute after:left-0 after:bottom-0 
@@ -87,10 +105,10 @@ const SafariBodyAndroid = () => {
             after:transition-transform after:duration-300 
             hover:after:scale-x-100"
           >
-            <h3 className="text-4xl text-white">SKILLS</h3>
+            <h3 className="text-4xl text-white font-bold">SKILLS</h3>
           </div>
           <p className="text-xl text-gray-700 mb-5">WHAT I CAN DO</p>
-        </div>
+        </motion.div>
 
         <div className="flex flex-col md:flex-row">
           <div className="w-[100%] md:w-[50%] p-1 flex items-center justify-center">
@@ -109,7 +127,13 @@ const SafariBodyAndroid = () => {
 
       {/* experience */}
       <div className="flex flex-col w-full max-w-4xl mx-auto mt-20 pl-5 items-center justify-center">
-        <div className="w-full text-center">
+        <motion.div
+          className="w-full text-center"
+          initial={{ opacity: 0, y: 100 }}
+          whileInView={{ opacity: 1, y: 0 }}
+          viewport={{ once: true, amount: 0.4 }}
+          transition={{ duration: 0.8, delay: 0.2 }}
+        >
           <div
             className=" relative inline-block 
             after:content-[''] after:absolute after:left-0 after:bottom-0 
@@ -126,7 +150,7 @@ const SafariBodyAndroid = () => {
               One sip of coffee is a stream of elegant code
             </p>
           </div>
-        </div>
+        </motion.div>
         <div className="relativ z-10 mt-10">
           <FlowChart />
         </div>
@@ -138,20 +162,27 @@ const SafariBodyAndroid = () => {
       </div>
       {/* Quotes */}
       <div className="zoom-in max-w-7xl mx-auto mt-17 mb-15 lg:mb-20  px-8 md:mt-10 lg:mt-20 md:pt-5">
-        <div
-          className="relative inline-block 
+        <motion.div
+          initial={{ opacity: 0, y: 100 }}
+          whileInView={{ opacity: 1, y: 0 }}
+          viewport={{ once: true, amount: 0.4 }}
+          transition={{ duration: 0.8, delay: 0.2 }}
+        >
+          <div
+            className="relative inline-block 
             after:content-[''] after:absolute after:left-0 after:bottom-0 
             after:w-full after:h-[2px] after:bg-sky-400 
             after:scale-x-0 after:origin-left 
             after:transition-transform after:duration-300 
             hover:after:scale-x-100"
-        >
-          <h3 className=" text-3xl xl:text-4xl font-bold text-sky-400">
-            QUOTES
-          </h3>
-        </div>
-        <br />
-        <span className="text-m  text-gray-600">Words that inspire me</span>
+          >
+            <h3 className=" text-3xl xl:text-4xl font-bold text-white">
+              QUOTES
+            </h3>
+          </div>
+          <br />
+          <span className="text-m  text-gray-600">Words that inspire me</span>
+        </motion.div>
         <div>
           <Quotes />
         </div>

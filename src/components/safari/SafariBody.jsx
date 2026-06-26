@@ -29,7 +29,7 @@ const SafariBody = () => {
       {/* About */}
       <div className="w-full max-w-4xl mx-auto mt-5 ">
         {/* teks dan efek hover */}
-        <div
+        <motion.div
           className="relative z-10 inline-block 
              after:content-[''] after:absolute after:left-0 after:bottom-0 
              after:w-full after:h-[2px] after:bg-sky-400 
@@ -37,11 +37,15 @@ const SafariBody = () => {
               after:transition-transform after:duration-300 
               hover:after:scale-x-100 zoom-in
               bottom-4 left-3 "
+          initial={{ opacity: 0, y: 100 }}
+          whileInView={{ opacity: 1, y: 0 }}
+          viewport={{ once: true, amount: 0.4 }}
+          transition={{ duration: 0.8, delay: 0.2 }}
         >
-          <h2 className="text-white text-4xl md:text-6xl font-light">
+          <h2 className="text-white text-4xl md:text-6xl font-bold">
             About <span className="font-bold text-sky-400">Me</span>
           </h2>
-        </div>
+        </motion.div>
 
         <div className="flex w-full max-w-4xl mx-auto mt-5">
           <div className="w-[45%] relative pl-6">
@@ -68,7 +72,13 @@ const SafariBody = () => {
               speed={80}
               pause={80}
             />
-            <div className="mt-2 md:mt-4 mx-auto px-1">
+            <motion.div
+              className="mt-2 md:mt-4 mx-auto px-1"
+              initial={{ opacity: 0, x: 100 }}
+              whileInView={{ opacity: 1, x: 0 }}
+              viewport={{ once: true, amount: 0.4 }}
+              transition={{ duration: 0.8, delay: 0.2 }}
+            >
               <p
                 className={clsx(
                   isFullscreen
@@ -83,33 +93,82 @@ const SafariBody = () => {
                 academic background, I chose to focus on enhancing my
                 programming skills, particularly in web development.
               </p>
-            </div>
-            <div className="flex gap-4">
-              <div className="flex mt-3">
+            </motion.div>
+            {/* button */}
+            <motion.div
+              className="flex gap-4"
+              initial={{ opacity: 0, y: 100 }}
+              whileInView={{ opacity: 1, y: 0 }}
+              viewport={{ once: true, amount: 0.4 }}
+              transition={{ duration: 0.8, delay: 0.2 }}
+            >
+              <motion.div className="group flex mt-3">
                 <a
                   href="/files/resume.pdf"
                   download
                   aria-label="Download Resume"
                 >
                   <motion.button
-                    whileHover={{ backgroundColor: "#0ea5e9" }} // Tailwind sky-600
-                    transition={{ duration: 0.3 }}
-                    className="flex w-[160px] lg:w-[180px] h-[25px] lg:h-[30px] rounded-full pl-2 lg:pl-4 py-2 border-2 border-sky-500 justify-between items-center text-black hover:text-white"
+                    whileHover={{
+                      backgroundColor: "#0ea5e9",
+                      scale: 1.03,
+                    }}
+                    transition={{
+                      duration: 0.4,
+                      ease: "easeOut",
+                    }}
+                    className="flex w-[160px] lg:w-[180px] h-[25px] lg:h-[30px]
+                                rounded-full pl-2 lg:pl-4 py-2 border-2 border-sky-500
+                                justify-between items-center text-black overflow-hidden"
                   >
-                    <span className="text-lg text-white">Download CV</span>
-                    <div className="w-[25px] lg:w-[30px] h-[25px] lg:h-[30px] rounded-full bg-sky-400 flex justify-center items-center">
-                      <FiDownload className="" />
+                    <span
+                      className="
+                        text-lg
+                        text-white
+                        transition-all
+                        duration-500
+                        ease-out
+                        group-hover:translate-x-4
+                        group-hover:text-black
+                      "
+                    >
+                      Download CV
+                    </span>
+
+                    <div
+                      className="
+                        w-[25px] lg:w-[30px]
+                        h-[25px] lg:h-[30px]
+                        rounded-full
+                        bg-sky-500
+                        flex
+                        justify-center
+                        items-center
+                        transition-all
+                        duration-500
+                        ease-out
+                        group-hover:-translate-x-34
+                        group-hover:lg:-translate-x-36
+                      "
+                    >
+                      <FiDownload />
                     </div>
                   </motion.button>
                 </a>
-              </div>
-            </div>
+              </motion.div>
+            </motion.div>
           </div>
         </div>
       </div>
       {/* Skill */}
       <div className="flex flex-col w-full max-w-4xl mx-auto mt-20 px-5">
-        <div className="w-full">
+        <motion.div
+          className="w-full"
+          initial={{ opacity: 0, y: 100 }}
+          whileInView={{ opacity: 1, y: 0 }}
+          viewport={{ once: true, amount: 0.4 }}
+          transition={{ duration: 0.8, delay: 0.2 }}
+        >
           <div
             className=" relative inline-block 
             after:content-[''] after:absolute after:left-0 after:bottom-0 
@@ -121,7 +180,7 @@ const SafariBody = () => {
             <h3 className="text-4xl text-white">SKILLS</h3>
           </div>
           <p className="text-xl text-gray-700 mb-5">WHAT I CAN DO</p>
-        </div>
+        </motion.div>
 
         <div className="flex flex-col md:flex-row">
           <div className="w-[100%] md:w-[50%] p-1 flex items-center justify-center">
@@ -139,7 +198,13 @@ const SafariBody = () => {
       </div>
       {/* experience */}
       <div className="flex flex-col w-full max-w-4xl mx-auto mt-20 pl-5 items-center justify-center">
-        <div className="w-full text-center">
+        <motion.div
+          className="w-full text-center"
+          initial={{ opacity: 0, y: 100 }}
+          whileInView={{ opacity: 1, y: 0 }}
+          viewport={{ once: true, amount: 0.4 }}
+          transition={{ duration: 0.8, delay: 0.2 }}
+        >
           {/* hp */}
           <div
             className=" relative inline-block 
@@ -162,7 +227,8 @@ const SafariBody = () => {
               One sip of coffee is a stream of elegant code
             </p>
           </div>
-        </div>
+        </motion.div>
+
         <div className="relativ z-10 mt-10">
           <FlowChart />
         </div>
@@ -173,18 +239,25 @@ const SafariBody = () => {
       </div>
       {/* Quotes */}
       <div className="zoom-in max-w-7xl mx-auto mt-17 mb-15 lg:mb-20  px-8 md:mt-10 lg:mt-20 md:pt-5">
-        <div
-          className="relative inline-block 
+        <motion.div
+          initial={{ opacity: 0, y: 100 }}
+          whileInView={{ opacity: 1, y: 0 }}
+          viewport={{ once: true, amount: 0.4 }}
+          transition={{ duration: 0.8, delay: 0.2 }}
+        >
+          <div
+            className="relative inline-block 
             after:content-[''] after:absolute after:left-0 after:bottom-0 
             after:w-full after:h-[2px] after:bg-sky-400 
             after:scale-x-0 after:origin-left 
             after:transition-transform after:duration-300 
             hover:after:scale-x-100"
-        >
-          <h3 className=" text-3xl xl:text-4xl font-bold text-sky-400">
-            QUOTES
-          </h3>
-        </div>
+          >
+            <h3 className=" text-3xl xl:text-4xl font-bold text-white">
+              QUOTES
+            </h3>
+          </div>
+        </motion.div>
         <br />
         <span className="text-m  text-gray-600">Words that inspire me</span>
         <div>

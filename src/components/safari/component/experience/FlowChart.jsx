@@ -125,7 +125,7 @@ const FlowChart = () => {
                 <div
                   className={`hidden md:flex md:flex-col bg-white border border-gray-300 p-1 rounded-lg shadow-lg w-full md:w-1/2 md:min-h-[350px]  mt-4 md:mt-6 md:mb-12 z-10 transform md:translate-y-12 lg:translate-y-12 ${
                     i % 2 !== 0
-                      ? " md:mr-auto md:ml-87"
+                      ? " md:mr-auto md:ml-95"
                       : " md:ml-auto md:mr-125 lg:mr-150 transform -translate-x-2"
                   }`}
                 >

@@ -11,7 +11,7 @@ const ServiceCard = ({ index, service }) => {
       transition={{ duration: 0.8, delay: index * 0.2 }}
     >
       <motion.div
-        className="bg-transparent rounded-lg shadow-md p-4 mb-2 border border-solid border-sky-500"
+        className="group bg-transparent rounded-lg shadow-md p-4 mb-2 border border-solid border-sky-500"
         whileHover={{
           scale: 1.02,
           boxShadow: "0 0 25px rgba(14,165,233,0.7)",
@@ -19,6 +19,7 @@ const ServiceCard = ({ index, service }) => {
         }}
         transition={{ type: "spring", stiffness: 200 }}
       >
+        {/* Header */}
         <div className="flex items-center justify-between border-b pb-3">
           <div className="flex items-center gap-4">
             <img
@@ -26,21 +27,53 @@ const ServiceCard = ({ index, service }) => {
               alt={service.title}
               className="w-16 h-16 rounded object-cover"
             />
+
             <div>
-              <h4 className="font-semibold text-xl text-white">
+              <h4 className="relative inline-block font-semibold text-xl text-white">
                 {service.title}
+
+                {/* Underline Animation */}
+                <span
+                  className="
+                    absolute
+                    left-0
+                    -bottom-1
+                    h-[2px]
+                    w-full
+                    bg-sky-400
+                    shadow-[0_0_8px_#38bdf8]
+                    origin-left
+                    scale-x-0
+                    transition-transform
+                    duration-300
+                    ease-out
+                    group-hover:scale-x-100
+                  "
+                />
               </h4>
             </div>
           </div>
         </div>
-        {/* Skill list */}
+
+        {/* Skill List */}
         <div className="mt-2 flex flex-wrap gap-2 p-1">
           {service.skill?.map((s, i) => (
             <span
               key={i}
-              className="bg-gray-900/50 text-white px-3 py-1 rounded-full text-sm font-medium 
-             hover:bg-sky-800 hover:text-white 
-             transition transform hover:scale-110"
+              className="
+                bg-gray-900/50
+                text-white
+                px-3
+                py-1
+                rounded-full
+                text-sm
+                font-medium
+                hover:bg-sky-800
+                hover:text-white
+                transition
+                transform
+                hover:scale-110
+              "
             >
               {s}
             </span>

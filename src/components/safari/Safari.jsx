@@ -67,9 +67,9 @@ const Safari = () => {
       <div
         style={{
           zIndex: win.zIndex,
-          left: isFullscreen ? 0 : position.x - 30,
-          top: isFullscreen ? 0 : position.y - 10,
-          width: isFullscreen ? "100vw" : "46rem",
+          left: isFullscreen ? 0 : position.x - 48,
+          top: isFullscreen ? 0 : position.y - 12,
+          width: isFullscreen ? "100vw" : "50rem",
           height: isFullscreen ? "100vh" : "42rem",
         }}
         className="absolute w-96 bg-white rounded-xl shadow-lg overflow-hidden"
