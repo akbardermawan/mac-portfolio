@@ -5,12 +5,12 @@ import { motion } from "framer-motion";
 
 const IntroAndroid = () => {
   return (
-    <div className=" w-full h-full pl-[10%]">
+    <div className=" w-full h-full pl-[10%] overflow-x-hidden">
       <div className="w-full h-full ">
         <div className="w-full h-full flex  justify-center flex-col">
           <div>
             <DecryptedText
-              text="AKBAR DERMAWAN MAHBUBILLAH"
+              text="Akbar Dermawan"
               animateOn="view"
               revealDirection="center"
               className="text-lg md:text-2xl text-gray-300 font-bold"
