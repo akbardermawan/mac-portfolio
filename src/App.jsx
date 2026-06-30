@@ -22,6 +22,29 @@ import Aurora from "./components/background/Aurora";
 function App() {
   return (
     <main className="w-full h-screen relative ">
+      {/* 🔥 SEO LANDING (VISIBLE UNTUK GOOGLE, HIDDEN UNTUK USER) */}
+      <section className="sr-only">
+        <h1>Akbar Portfolio - React JS Frontend Developer</h1>
+
+        <p>
+          Akbar adalah seorang Frontend Developer yang membangun website modern
+          menggunakan React JS, Vite, dan teknologi frontend terbaru. Portfolio
+          ini menampilkan berbagai project, pengalaman, dan kemampuan dalam web
+          development.
+        </p>
+
+        <h2>Skills</h2>
+        <p>React JS, JavaScript, Vite, Redux, Tailwind CSS, Web Development</p>
+
+        <h2>Projects</h2>
+        <p>
+          Website portfolio, UI desktop simulator, aplikasi frontend interaktif,
+          dan berbagai project React modern.
+        </p>
+
+        <h2>Location</h2>
+        <p>Indonesia</p>
+      </section>
       {/* Background */}
       <div className="absolute inset-0 -z-10 bg-black">
         <Aurora
