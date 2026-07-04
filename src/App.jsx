@@ -24,17 +24,19 @@ function App() {
     <main className="w-full h-screen relative ">
       {/* 🔥 SEO LANDING (VISIBLE UNTUK GOOGLE, HIDDEN UNTUK USER) */}
       <section className="sr-only">
-        <h1>Akbar Portfolio - React JS Frontend Developer</h1>
+        <h1>Akbar Derwaman Mahbubillah</h1>
 
         <p>
-          Akbar adalah seorang Frontend Developer yang membangun website modern
-          menggunakan React JS, Vite, dan teknologi frontend terbaru. Portfolio
-          ini menampilkan berbagai project, pengalaman, dan kemampuan dalam web
-          development.
+          Akbar Dermawan Mahbubillah adalah seorang Frontend Developer yang
+          membangun website modern. Portfolio ini menampilkan berbagai project,
+          pengalaman, dan kemampuan dalam web development.
         </p>
 
         <h2>Skills</h2>
-        <p>React JS, JavaScript, Vite, Redux, Tailwind CSS, Web Development</p>
+        <p>
+          React JS, Vue Js, Next Js, JavaScript, TypeScript, Nest Js, Vite,
+          Redux, Tailwind CSS, Web Development
+        </p>
 
         <h2>Projects</h2>
         <p>
