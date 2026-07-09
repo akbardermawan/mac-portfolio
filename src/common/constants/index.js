@@ -209,7 +209,7 @@ const ABOUT_LOCATION_Android = [
     windowKey: "textandphoto",
     position: "top-10 left-5", //icon position insider Finder
     windowPosition: "top-[15vh] right-20", //optional: Finder
-    src: "/images/blog1.png",
+    src: "/images/akbar-3.JPG",
   },
   {
     id: 32,
@@ -222,39 +222,30 @@ const ABOUT_LOCATION_Android = [
   },
   {
     id: 33,
-    name: "CPNS2.com",
+    name: "Village.com",
     icon: "/images/safari.png",
     kind: "file",
     fileType: "url",
     position: "top-10 left-5",
-    href: "https://akbarcpns.netlify.app/",
+    href: "https://webvillage.netlify.app/",
   },
   {
     id: 34,
-    name: "CPNS2.com",
+    name: "First Portfolio",
     icon: "/images/safari.png",
     kind: "file",
     fileType: "url",
     position: "top-10 left-5",
-    href: "https://akbarcpns.netlify.app/",
+    href: "https://akbardermawan.github.io/",
   },
   {
     id: 35,
-    name: "CPNS2.com",
+    name: "Second Portfolio",
     icon: "/images/safari.png",
     kind: "file",
     fileType: "url",
     position: "top-10 left-5",
-    href: "https://akbarcpns.netlify.app/",
-  },
-  {
-    id: 36,
-    name: "CPNS2.com",
-    icon: "/images/safari.png",
-    kind: "file",
-    fileType: "url",
-    position: "top-10 left-5",
-    href: "https://akbarcpns.netlify.app/",
+    href: "https://akbardermawan-react.netlify.app/",
   },
 ];
 
@@ -369,21 +360,21 @@ const socials = [
     text: "Platform",
     icon: "/icons/atom.svg",
     bg: "#4bcb63",
-    link: "https://github.com/akbardermawan",
+    link: "https://www.instagram.com/akbardermawanzzz/",
   },
   {
     id: 3,
     text: "Twiter/X",
     icon: "/icons/twitter.svg",
     bg: "#f26222",
-    link: "https://github.com/akbardermawan",
+    link: "https://x.com/Akbar91656971",
   },
   {
     id: 4,
     text: "LinkedIn",
     icon: "/icons/linkedin.svg",
     bg: "#00b4d8",
-    link: "https://github.com/akbardermawan",
+    link: "https://www.linkedin.com/in/akbar-dermawan-30bb6a210/",
   },
 ];
 

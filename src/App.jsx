@@ -18,6 +18,7 @@ import Village from "./components/dekstop/Village";
 import Music from "./components/dekstop/music/Music";
 import Calendar from "./components/dekstop/calendar/Calendar";
 import Aurora from "./components/background/Aurora";
+import Note from "./components/dekstop/Note";
 
 function App() {
   return (
@@ -27,7 +28,7 @@ function App() {
         <h1>Akbar Derwaman Mahbubillah</h1>
 
         <p>
-          Akbar Dermawan Mahbubillah adalah seorang Frontend Developer yang
+          Akbar Dermawan Mahbubillah adalah seorang full stack Developer yang
           membangun website modern. Portfolio ini menampilkan berbagai project,
           pengalaman, dan kemampuan dalam web development.
         </p>
@@ -35,7 +36,7 @@ function App() {
         <h2>Skills</h2>
         <p>
           React JS, Vue Js, Next Js, JavaScript, TypeScript, Nest Js, Vite,
-          Redux, Tailwind CSS, Web Development
+          Redux, Tailwind CSS, Git, Github.
         </p>
 
         <h2>Projects</h2>
@@ -73,6 +74,7 @@ function App() {
       <Village />
       <Music />
       <Calendar />
+      <Note />
     </main>
   );
 }
