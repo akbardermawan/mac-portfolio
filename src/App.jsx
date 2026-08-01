@@ -19,6 +19,7 @@ import Music from "./components/dekstop/music/Music";
 import Calendar from "./components/dekstop/calendar/Calendar";
 import Aurora from "./components/background/Aurora";
 import Note from "./components/dekstop/Note";
+import VisualStudioCode from "./components/dekstop/visualStudio/VisualStudioCode";
 
 function App() {
   return (
@@ -75,6 +76,7 @@ function App() {
       <Music />
       <Calendar />
       <Note />
+      <VisualStudioCode />
     </main>
   );
 }

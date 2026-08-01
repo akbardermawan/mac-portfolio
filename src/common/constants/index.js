@@ -53,6 +53,7 @@ const WINDOW_CONFIG = {
   village: { isOpen: false, zIndex: INITIAL_Z_INDEX, data: null },
   calendar: { isOpen: false, zIndex: INITIAL_Z_INDEX, data: null },
   music: { isOpen: false, zIndex: INITIAL_Z_INDEX, data: null },
+  visualstudio: { isOpen: false, zIndex: INITIAL_Z_INDEX, data: null },
 };
 
 const navLinks = [
@@ -586,6 +587,64 @@ const playlist_music = [
   },
 ];
 
+const navVisualStudio = [
+  "File",
+  "Edit",
+  "Selection",
+  "View",
+  "Go",
+  "Run",
+  "Terminal",
+];
+
+const visualStudioProject = [
+  {
+    id: 1,
+    name: "src",
+    img: "/icons/right.svg",
+    children: [
+      {
+        id: 11,
+        name: "App.jsx",
+        img: "/icons/tecnology/reactjs.png",
+        windowKey: "appvs",
+      },
+      {
+        id: 12,
+        name: "pages",
+        img: "/icons/right.svg",
+        children: [
+          {
+            id: 31,
+            name: "Home.jsx",
+            img: "/icons/tecnology/reactjs.png",
+            windowKey: "homevs",
+          },
+          {
+            id: 32,
+            name: "About.jsx",
+            img: "/icons/tecnology/reactjs.png",
+            windowKey: "aboutvs",
+          },
+          {
+            id: 33,
+            name: "Resume.jsx",
+            img: "/icons/tecnology/reactjs.png",
+            windowKey: "resumevs",
+          },
+          {
+            id: 34,
+            name: "Contact.jsx",
+            img: "/icons/tecnology/reactjs.png",
+            windowKey: "contactvs",
+          },
+        ],
+      },
+    ],
+  },
+  { id: 2, name: "README.md", img: "/icons/info.svg", windowKey: "readmevs" },
+];
+
 export {
   dockApps,
   INITIAL_Z_INDEX,
@@ -605,4 +664,6 @@ export {
   imagesGalry,
   Archive,
   playlist_music,
+  navVisualStudio,
+  visualStudioProject,
 };
