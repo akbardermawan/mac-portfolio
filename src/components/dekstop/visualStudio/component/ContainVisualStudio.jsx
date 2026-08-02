@@ -20,6 +20,8 @@ const ContainVisualStudio = () => {
   const activeLocation = useSelector(
     (state) => state.locationVs.activeLocation,
   );
+  //Window Fullscrenn -> state redux
+  const isFullscreen = useSelector((state) => state.visualStudio.isFullscreen);
 
   // Membuka / menutup folder utama
   const toggleFolderHandle = () => {
@@ -39,42 +41,87 @@ const ContainVisualStudio = () => {
   return (
     <div className="w-full h-full flex">
       {/* SIDEBAR */}
-      <div className="w-[5%] flex justify-between items-center flex-col pb-8 bg-white/5 border border-r-gray-700">
+      <div
+        className={clsx(
+          isFullscreen ? "w-[5%] xl:w-[3%]" : "w-[5%] ",
+          " flex justify-between items-center flex-col pb-8 bg-white/5 border border-r-gray-700",
+        )}
+      >
         <ul className="flex flex-col justify-center items-center gap-1">
           <li className="my-1">
-            <LuFiles className="w-6 h-6 text-gray-400" />
+            <LuFiles
+              className={clsx(
+                isFullscreen ? "w-8 h-8" : "w-6 h-6",
+                " text-gray-400",
+              )}
+            />
           </li>
 
           <li className="my-1">
-            <LuSearch className="w-6 h-6 text-gray-400" />
+            <LuSearch
+              className={clsx(
+                isFullscreen ? "w-8 h-8" : "w-6 h-6",
+                " text-gray-400",
+              )}
+            />
           </li>
 
           <li className="my-1">
-            <FaCodeBranch className="text-gray-400 w-5 h-5" />
+            <FaCodeBranch
+              className={clsx(
+                isFullscreen ? "w-8 h-8" : "w-6 h-6",
+                " text-gray-400",
+              )}
+            />
           </li>
 
           <li className="my-1">
-            <VscDebugAlt className="w-6 h-6 text-gray-400" />
+            <VscDebugAlt
+              className={clsx(
+                isFullscreen ? "w-8 h-8" : "w-6 h-6",
+                " text-gray-400",
+              )}
+            />
           </li>
 
           <li className="my-1">
-            <VscExtensions className="w-6 h-6 text-gray-400" />
+            <VscExtensions
+              className={clsx(
+                isFullscreen ? "w-8 h-8" : "w-6 h-6",
+                " text-gray-400",
+              )}
+            />
           </li>
         </ul>
 
         <ul className="flex flex-col justify-center items-center gap-1">
           <li className="my-1">
-            <VscAccount className="w-6 h-6 text-gray-400" />
+            <VscAccount
+              className={clsx(
+                isFullscreen ? "w-8 h-8" : "w-6 h-6",
+                " text-gray-400",
+              )}
+            />
           </li>
 
           <li className="my-1">
-            <IoSettingsOutline className="w-6 h-6 text-gray-400" />
+            <IoSettingsOutline
+              className={clsx(
+                isFullscreen ? "w-8 h-8" : "w-6 h-6",
+                " text-gray-400",
+              )}
+            />
           </li>
         </ul>
       </div>
 
       {/* EXPLORER */}
-      <div className="bg-white/5 w-[25%] border border-r-gray-700 relative pb-8">
+      <div
+        className={clsx(
+          isFullscreen ? "w-[25%] xl:w-[17%]" : "w-[25%]",
+          "bg-white/5  border border-r-gray-700 relative pb-8",
+        )}
+      >
         <div className="flex justify-between items-center mx-4 my-2">
           <p className="text-gray-600">EXPLORER</p>
 
@@ -222,7 +269,12 @@ const ContainVisualStudio = () => {
       </div>
 
       {/* MAIN CONTENT */}
-      <div className="bg-black w-[70%] h-[2.5rem]">
+      <div
+        className={clsx(
+          isFullscreen ? " w-[80%] h-[85vh]" : " w-[70%] h-[2.5rem]",
+          "bg-black",
+        )}
+      >
         <EditorAreaVisualStudio />
       </div>
     </div>

@@ -1650,7 +1650,7 @@ const AboutVs = () => {
       {/* LINE 2 */}
       {/* ========================= */}
 
-      <p className="font-mono pl-3">
+      <p className="font-mono pl-4">
         {line2.map((item, index) => {
           const startIndex = currentIndexLine2;
 
@@ -1675,7 +1675,7 @@ const AboutVs = () => {
       {/* LINE 3 */}
       {/* ========================= */}
 
-      <p className="font-mono pl-6">
+      <p className="font-mono pl-8">
         {line3.map((item, index) => {
           const startIndex = currentIndexLine3;
 
@@ -1700,7 +1700,7 @@ const AboutVs = () => {
       {/* LINE 4 */}
       {/* ========================= */}
 
-      <p className="font-mono pl-9">
+      <p className="font-mono pl-12">
         {line4.map((item, index) => {
           const startIndex = currentIndexLine4;
 
@@ -1725,7 +1725,7 @@ const AboutVs = () => {
       {/* LINE 5 */}
       {/* ========================= */}
 
-      <p className="font-mono pl-9">
+      <p className="font-mono pl-12">
         {line5.map((item, index) => {
           const startIndex = currentIndexLine5;
 
@@ -1750,7 +1750,7 @@ const AboutVs = () => {
       {/* LINE 6 */}
       {/* ========================= */}
 
-      <p className="font-mono pl-9">
+      <p className="font-mono pl-12">
         {line6.map((item, index) => {
           const startIndex = currentIndexLine6;
 
@@ -1775,7 +1775,7 @@ const AboutVs = () => {
       {/* LINE 7 */}
       {/* ========================= */}
 
-      <p className="font-mono pl-6">
+      <p className="font-mono pl-8">
         {line7.map((item, index) => {
           const startIndex = currentIndexLine7;
 
@@ -1799,7 +1799,7 @@ const AboutVs = () => {
       {/* LINE 8 */}
       {/* ========================= */}
 
-      <p className="font-mono pl-6">
+      <p className="font-mono pl-8">
         {line8.map((item, index) => {
           const startIndex = currentIndexLine8;
 
@@ -1823,7 +1823,7 @@ const AboutVs = () => {
       {/* LINE 9 */}
       {/* ========================= */}
 
-      <p className="font-mono pl-9">
+      <p className="font-mono pl-12">
         {line9.map((item, index) => {
           const startIndex = currentIndexLine9;
 
@@ -1848,7 +1848,7 @@ const AboutVs = () => {
       {/* LINE 10 */}
       {/* ========================= */}
 
-      <p className="font-mono pl-9">
+      <p className="font-mono pl-12">
         {line10.map((item, index) => {
           const startIndex = currentIndexLine10;
 
@@ -1873,7 +1873,7 @@ const AboutVs = () => {
       {/* LINE 11 */}
       {/* ========================= */}
 
-      <p className="font-mono pl-9">
+      <p className="font-mono pl-12">
         {line11.map((item, index) => {
           const startIndex = currentIndexLine11;
 
@@ -1898,7 +1898,7 @@ const AboutVs = () => {
       {/* LINE 12 */}
       {/* ========================= */}
 
-      <p className="font-mono pl-6">
+      <p className="font-mono pl-8">
         {line12.map((item, index) => {
           const startIndex = currentIndexLine12;
 
@@ -1923,7 +1923,7 @@ const AboutVs = () => {
       {/* LINE 13 */}
       {/* ========================= */}
 
-      <p className="font-mono pl-6">
+      <p className="font-mono pl-8">
         {line13.map((item, index) => {
           const startIndex = currentIndexLine13;
 
@@ -1948,7 +1948,7 @@ const AboutVs = () => {
       {/* LINE 14 */}
       {/* ========================= */}
 
-      <p className="font-mono pl-9">
+      <p className="font-mono pl-12">
         {line14.map((item, index) => {
           const startIndex = currentIndexLine14;
 
@@ -1973,7 +1973,7 @@ const AboutVs = () => {
       {/* LINE 15 */}
       {/* ========================= */}
 
-      <p className="font-mono pl-9">
+      <p className="font-mono pl-12">
         {line15.map((item, index) => {
           const startIndex = currentIndexLine15;
 
@@ -1998,7 +1998,7 @@ const AboutVs = () => {
       {/* LINE 16 */}
       {/* ========================= */}
 
-      <p className="font-mono pl-9">
+      <p className="font-mono pl-12">
         {line16.map((item, index) => {
           const startIndex = currentIndexLine16;
 
@@ -2023,7 +2023,7 @@ const AboutVs = () => {
       {/* LINE 17 */}
       {/* ========================= */}
 
-      <p className="font-mono pl-6">
+      <p className="font-mono pl-8">
         {line17.map((item, index) => {
           const startIndex = currentIndexLine17;
 
@@ -2048,7 +2048,7 @@ const AboutVs = () => {
       {/* LINE 18 */}
       {/* ========================= */}
 
-      <p className="font-mono pl-6">
+      <p className="font-mono pl-8">
         {line18.map((item, index) => {
           const startIndex = currentIndexLine18;
 
@@ -2073,7 +2073,7 @@ const AboutVs = () => {
       {/* LINE 19 */}
       {/* ========================= */}
 
-      <p className="font-mono pl-9">
+      <p className="font-mono pl-12">
         {line19.map((item, index) => {
           const startIndex = currentIndexLine19;
 
@@ -2098,7 +2098,7 @@ const AboutVs = () => {
       {/* LINE 20 */}
       {/* ========================= */}
 
-      <p className="font-mono pl-9">
+      <p className="font-mono pl-12">
         {line20.map((item, index) => {
           const startIndex = currentIndexLine20;
 
@@ -2123,7 +2123,7 @@ const AboutVs = () => {
       {/* LINE 21 */}
       {/* ========================= */}
 
-      <p className="font-mono pl-9">
+      <p className="font-mono pl-12">
         {line21.map((item, index) => {
           const startIndex = currentIndexLine21;
 
@@ -2148,7 +2148,7 @@ const AboutVs = () => {
       {/* LINE 22 */}
       {/* ========================= */}
 
-      <p className="font-mono pl-6">
+      <p className="font-mono pl-8">
         {line22.map((item, index) => {
           const startIndex = currentIndexLine22;
 
@@ -2172,7 +2172,7 @@ const AboutVs = () => {
       {/* LINE 23 */}
       {/* ========================= */}
 
-      <p className="font-mono pl-6">
+      <p className="font-mono pl-8">
         {line23.map((item, index) => {
           const startIndex = currentIndexLine23;
 
@@ -2196,7 +2196,7 @@ const AboutVs = () => {
       {/* LINE 24 */}
       {/* ========================= */}
 
-      <p className="font-mono pl-9">
+      <p className="font-mono pl-12">
         {line24.map((item, index) => {
           const startIndex = currentIndexLine24;
 
@@ -2220,7 +2220,7 @@ const AboutVs = () => {
       {/* LINE 25 */}
       {/* ========================= */}
 
-      <p className="font-mono pl-9">
+      <p className="font-mono pl-12">
         {line25.map((item, index) => {
           const startIndex = currentIndexLine25;
 
@@ -2244,7 +2244,7 @@ const AboutVs = () => {
       {/* LINE 26 */}
       {/* ========================= */}
 
-      <p className="font-mono pl-9">
+      <p className="font-mono pl-12">
         {line26.map((item, index) => {
           const startIndex = currentIndexLine26;
 
@@ -2268,7 +2268,7 @@ const AboutVs = () => {
       {/* LINE 27 */}
       {/* ========================= */}
 
-      <p className="font-mono pl-6">
+      <p className="font-mono pl-12">
         {line27.map((item, index) => {
           const startIndex = currentIndexLine27;
 
@@ -2292,7 +2292,7 @@ const AboutVs = () => {
       {/* LINE 28 */}
       {/* ========================= */}
 
-      <p className="font-mono pl-3">
+      <p className="font-mono pl-4">
         {line28.map((item, index) => {
           const startIndex = currentIndexLine28;
 
@@ -2317,7 +2317,7 @@ const AboutVs = () => {
       {/* LINE 29 */}
       {/* ========================= */}
 
-      <p className="font-mono pl-3">
+      <p className="font-mono pl-4">
         {line29.map((item, index) => {
           const startIndex = currentIndexLine29;
 
@@ -2341,7 +2341,7 @@ const AboutVs = () => {
       {/* LINE 30 */}
       {/* ========================= */}
 
-      <p className="font-mono pl-6">
+      <p className="font-mono pl-8">
         {line30.map((item, index) => {
           const startIndex = currentIndexLine30;
 
@@ -2365,7 +2365,7 @@ const AboutVs = () => {
       {/* LINE 31 */}
       {/* ========================= */}
 
-      <p className="font-mono pl-9">
+      <p className="font-mono pl-12">
         {line31.map((item, index) => {
           const startIndex = currentIndexLine31;
 
@@ -2389,7 +2389,7 @@ const AboutVs = () => {
       {/* LINE 32 */}
       {/* ========================= */}
 
-      <p className="font-mono pl-6">
+      <p className="font-mono pl-8">
         {line32.map((item, index) => {
           const startIndex = currentIndexLine32;
 
@@ -2413,7 +2413,7 @@ const AboutVs = () => {
       {/* LINE 33 */}
       {/* ========================= */}
 
-      <p className="font-mono pl-3">
+      <p className="font-mono pl-4">
         {line33.map((item, index) => {
           const startIndex = currentIndexLine33;
 
