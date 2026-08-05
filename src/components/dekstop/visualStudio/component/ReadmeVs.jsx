@@ -8,7 +8,7 @@ const ReadmeVs = () => {
   const dispatch = useDispatch();
   return (
     <div className="w-full h-[40rem] px-4 pt-5 text-white">
-      <div className="mx-auto max-w-3xl space-y-6">
+      <div className="mx-auto space-y-6 xl:px-6">
         <h2 className="text-center text-2xl font-semibold">
           Welcome to My Portfolio Website
         </h2>
@@ -24,7 +24,7 @@ const ReadmeVs = () => {
           <button
             type="button"
             onClick={() => dispatch(toggleWindow("safari"))}
-            className="font-semibold underline transition-opacity cursor-pointer hover:opacity-70"
+            className="font-semibold underline transition-opacity cursor-pointer hover:opacity-70 text-blue-400"
           >
             "Me"
           </button>
@@ -36,7 +36,7 @@ const ReadmeVs = () => {
           <a
             href="https://github.com/akbardermawan"
             target="_blank"
-            className="font-semibold underline transition-opacity cursor-pointer hover:opacity-70"
+            className="font-semibold underline transition-opacity cursor-pointer hover:opacity-70 text-blue-400"
           >
             "My GitHub"
           </a>
@@ -48,7 +48,7 @@ const ReadmeVs = () => {
           <a
             href="https://github.com/akbardermawan/mac-portfolio"
             target="_blank"
-            className="font-semibold underline transition-opacity cursor-pointer hover:opacity-70"
+            className="font-semibold underline transition-opacity cursor-pointer hover:opacity-70  text-blue-400"
           >
             "My Repository"
           </a>
