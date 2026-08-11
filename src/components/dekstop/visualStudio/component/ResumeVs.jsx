@@ -19,7 +19,7 @@ const ResumeVs = () => {
       color: "text-orange-700",
     },
     {
-      text: " Contact",
+      text: " Resume",
       color: "text-purple-400",
     },
     {
@@ -204,7 +204,7 @@ const ResumeVs = () => {
       color: "text-purple-400",
     },
     {
-      text: " About",
+      text: " Resume",
       color: "text-purple-400",
     },
     {

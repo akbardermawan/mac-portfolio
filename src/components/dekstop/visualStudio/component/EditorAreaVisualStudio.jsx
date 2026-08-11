@@ -45,7 +45,17 @@ const EditorAreaVisualStudio = () => {
   }, [activeLocation]);
 
   const deleteActiveLocation = (id) => {
-    setOpenLocations((prev) => prev.filter((location) => location.id !== id));
+    const nextLocations = openLocations.filter(
+      (location) => location.id !== id,
+    );
+
+    setOpenLocations(nextLocations);
+
+    if (id === activeLocation?.id) {
+      const lastLocation = nextLocations[nextLocations.length - 1] ?? null;
+
+      dispatch(setActiveLocation(lastLocation));
+    }
   };
 
   const renderContent = () => {
