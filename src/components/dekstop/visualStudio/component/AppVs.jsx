@@ -115,7 +115,7 @@ const AppVs = () => {
       color: "text-white",
     },
     {
-      text: "h1",
+      text: "header",
       color: "text-green-400",
     },
     {
@@ -123,15 +123,11 @@ const AppVs = () => {
       color: "text-white",
     },
     {
-      text: "Akbar",
+      text: "Akbar's",
       color: "text-white",
     },
     {
-      text: " Dermawan",
-      color: "text-white",
-    },
-    {
-      text: " Mahbubillah",
+      text: " Portfolio",
       color: "text-white",
     },
     {
@@ -139,7 +135,7 @@ const AppVs = () => {
       color: "text-white",
     },
     {
-      text: "h1",
+      text: "header",
       color: "text-green-400",
     },
     {

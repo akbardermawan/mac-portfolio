@@ -96,12 +96,14 @@ const ContainVisualStudio = () => {
 
         <ul className="flex flex-col justify-center items-center gap-1">
           <li className="my-1">
-            <VscAccount
-              className={clsx(
-                isFullscreen ? "w-8 h-8" : "w-6 h-6",
-                " text-gray-400",
-              )}
-            />
+            <a href="https://github.com/akbardermawan" target="_blank">
+              <VscAccount
+                className={clsx(
+                  isFullscreen ? "w-8 h-8" : "w-6 h-6",
+                  " text-gray-400",
+                )}
+              />
+            </a>
           </li>
 
           <li className="my-1">

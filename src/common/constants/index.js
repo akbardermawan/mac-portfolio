@@ -587,15 +587,7 @@ const playlist_music = [
   },
 ];
 
-const navVisualStudio = [
-  "File",
-  "Edit",
-  "Selection",
-  "View",
-  "Go",
-  "Run",
-  "Terminal",
-];
+const navVisualStudio = ["File", "Edit", "Selection", "View", "Go"];
 
 const visualStudioProject = [
   {

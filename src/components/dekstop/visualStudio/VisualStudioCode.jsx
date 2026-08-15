@@ -210,6 +210,18 @@ const VisualStudioCode = () => {
                       {item}
                     </li>
                   ))}
+                  <li
+                    className="rounded-md hover:bg-gray-900 p-1 cursor-pointer"
+                    onClick={() => dispatch(toggleWindow("safari"))}
+                  >
+                    Run
+                  </li>
+                  <li
+                    className="rounded-md hover:bg-gray-900 p-1 cursor-pointer"
+                    onClick={() => dispatch(toggleWindow("terminal"))}
+                  >
+                    Terminal
+                  </li>
                 </ul>
               </div>
               <div className="flex justify-center items-center rounded-xl p-1 w-48 h-8 my-2 transform translate-x-84 border border-gray-600">
@@ -302,8 +314,14 @@ const VisualStudioCode = () => {
                   </p>
                 </li>
                 <li className="flex h-6 mx-1 items-center">
-                  <FaGithub className="text-gray-400 w-4 h-4" />
-                  <p className="text-gray-400 px-1 text-sm">Sing In</p>
+                  <a
+                    href="https://github.com/akbardermawan"
+                    target="_blank"
+                    className="flex items-center"
+                  >
+                    <FaGithub className="text-gray-400 w-4 h-4" />
+                    <p className="text-gray-400 px-1 text-sm">Sing In</p>{" "}
+                  </a>
                 </li>
               </ul>
             </div>
