@@ -1,10 +1,10 @@
 import { createSlice } from "@reduxjs/toolkit";
-import { locations } from "../../../common/constants/index.js";
+import { navOffCode } from "../../../common/constants/index.js";
 
-const DEFAULT_LOCATION = locations.homevs;
+const DEFAULT_LOCATION = navOffCode[0];
 
-const locationVsSlice = createSlice({
-  name: "locationVs",
+const locationOffCdSlice = createSlice({
+  name: "locationOffCode",
   initialState: {
     activeLocation: DEFAULT_LOCATION,
   },
@@ -19,6 +19,6 @@ const locationVsSlice = createSlice({
 });
 
 export const { setActiveLocation, resetActiveLocation } =
-  locationVsSlice.actions;
+  locationOffCdSlice.actions;
 
-export default locationVsSlice.reducer;
+export default locationOffCdSlice.reducer;

@@ -4,6 +4,8 @@ import locationReducer from "./state/locationSlice.js";
 import safariReducer from "./state/safariSlice.js";
 import visualStudioReducer from "./state/visualStudioSlice.js";
 import locationVsReducer from "./state/locationVsSlice.js";
+import locationOffCdReducer from "./state/locationOffCdSlice.js";
+import offCodeSlice from "./state/offCodeSlice.js";
 
 const store = configureStore({
   reducer: {
@@ -12,6 +14,8 @@ const store = configureStore({
     safari: safariReducer,
     visualStudio: visualStudioReducer,
     locationVs: locationVsReducer,
+    locationOffCd: locationOffCdReducer,
+    offCode: offCodeSlice,
   },
 });
 

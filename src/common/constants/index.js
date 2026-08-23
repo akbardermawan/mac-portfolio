@@ -54,6 +54,7 @@ const WINDOW_CONFIG = {
   calendar: { isOpen: false, zIndex: INITIAL_Z_INDEX, data: null },
   music: { isOpen: false, zIndex: INITIAL_Z_INDEX, data: null },
   visualstudio: { isOpen: false, zIndex: INITIAL_Z_INDEX, data: null },
+  offcode: { isOpen: false, zIndex: INITIAL_Z_INDEX, data: null },
 };
 
 const navLinks = [
@@ -637,6 +638,12 @@ const visualStudioProject = [
   { id: 2, name: "README.md", img: "/icons/info.svg", windowKey: "readmevs" },
 ];
 
+const navOffCode = [
+  { id: 1, name: "Home", windowKey: "homeoffcode" },
+  { id: 2, name: "Traveler", windowKey: "traveleroffcode" },
+  { id: 3, name: "Daily Life", windowKey: "dailyoffcode" },
+];
+
 export {
   dockApps,
   INITIAL_Z_INDEX,
@@ -658,4 +665,5 @@ export {
   playlist_music,
   navVisualStudio,
   visualStudioProject,
+  navOffCode,
 };

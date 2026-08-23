@@ -20,6 +20,7 @@ import Calendar from "./components/dekstop/calendar/Calendar";
 import Aurora from "./components/background/Aurora";
 import Note from "./components/dekstop/Note";
 import VisualStudioCode from "./components/dekstop/visualStudio/VisualStudioCode";
+import OffCode from "./components/dekstop/offCode/OffCode";
 
 function App() {
   return (
@@ -77,6 +78,7 @@ function App() {
       <Calendar />
       <Note />
       <VisualStudioCode />
+      <OffCode />
     </main>
   );
 }

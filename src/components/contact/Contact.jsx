@@ -71,26 +71,79 @@ const Contact = () => {
 
   const handleSubmit = async (e) => {
     e.preventDefault();
+
+    if (loading) return;
+
     setLoading(true);
 
     const scriptURL =
       "https://script.google.com/macros/s/AKfycbwNZAWJgSIWpil3C5WXVA44p5SDYAuF7DUecWdrw-hoCY8KEygTCzhGjBOVtzTDT6EnJg/exec";
 
-    const formData = new FormData();
+    //send to telegram
+    const BOT_TOKEN = "8948801981:AAEyNOs1wjvtmitq2M48XZTTecDFENhcUcM";
+    const CHAT_ID = "8870754628";
 
-    formData.append("nama", form.name);
-    formData.append("mail", form.email);
-    formData.append("hp", form.nohp);
-    formData.append("pesan", form.message);
+    const googleFormData = new FormData();
+
+    googleFormData.append("nama", form.name.trim());
+    googleFormData.append("mail", form.email.trim());
+    googleFormData.append("hp", form.nohp.trim());
+    googleFormData.append("pesan", form.message.trim());
+
+    const telegramMessage = `
+📩 PESAN BARU DARI WEBSITE
+
+👤 Name
+${form.name.trim()}
+
+📧 Email
+${form.email.trim()}
+
+📱 No HP
+${form.nohp.trim()}
+
+💬 Message
+${form.message.trim()}
+`;
 
     try {
-      await fetch(scriptURL, {
-        method: "POST",
-        body: formData,
-      });
+      // Kirim ke Google Sheet dan Telegram secara bersamaan
+      const [googleResponse, telegramResponse] = await Promise.all([
+        fetch(scriptURL, {
+          method: "POST",
+          body: googleFormData,
+        }),
 
-      alert("Pesan Anda berhasil dikirim!");
+        fetch(`https://api.telegram.org/bot${BOT_TOKEN}/sendMessage`, {
+          method: "POST",
+          headers: {
+            "Content-Type": "application/json",
+          },
+          body: JSON.stringify({
+            chat_id: CHAT_ID,
+            text: telegramMessage,
+          }),
+        }),
+      ]);
 
+      // Cek response Telegram
+      const telegramData = await telegramResponse.json();
+
+      if (!telegramData.ok) {
+        throw new Error(
+          telegramData.description || "Gagal mengirim pesan ke Telegram",
+        );
+      }
+
+      // Cek response Google
+      if (!googleResponse.ok) {
+        throw new Error("Gagal mengirim data ke Google Sheet");
+      }
+
+      // Berhasil
+      alert("Pesan berhasil dikirim! 🎉");
+
+      // Reset form
       setForm({
         name: "",
         email: "",
@@ -98,8 +151,12 @@ const Contact = () => {
         message: "",
       });
     } catch (error) {
-      console.error(error);
-      alert("Terjadi kesalahan. Silakan coba lagi.");
+      console.error("Send message error:", error);
+
+      alert(
+        error.message ||
+          "Terjadi kesalahan saat mengirim pesan. Silakan coba lagi.",
+      );
     } finally {
       setLoading(false);
     }
