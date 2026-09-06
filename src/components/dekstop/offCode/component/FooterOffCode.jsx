@@ -43,7 +43,7 @@ const FooterOffCode = () => {
                   href="https://www.instagram.com/akbardermawanzzz/?hl=en"
                   target="_blank"
                 >
-                  <FaInstagram />
+                  <FaInstagram className="w-6 md:w-8 h-6 md:h-8 " />
                 </a>
               </li>
               <li className="m-1 md:m-2 rounded-full w-10 md:w-13 h-10 md:h-13 border-solid border flex items-center justify-center cursor-pointer text-gray-300 hover:bg-gray-300 hover:text-gray-800">

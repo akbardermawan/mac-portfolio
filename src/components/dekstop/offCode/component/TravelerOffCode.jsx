@@ -1,5 +1,6 @@
 import React from "react";
 import clsx from "clsx";
+import { myTravel } from "../../../../common/constants";
 
 // redux
 import { useSelector, useDispatch } from "react-redux";
@@ -75,10 +76,6 @@ const TravelerOffCode = () => {
           <article className="rounded-2xl border border-slate-200 bg-white px-6 py-8 shadow-sm sm:px-8 lg:px-10">
             {/* Article Header */}
             <header className="mb-8 border-b border-slate-100 pb-6">
-              <span className="text-sm font-semibold uppercase tracking-wider text-emerald-600">
-                My Travel Story
-              </span>
-
               <h1 className="mt-3 text-3xl font-bold leading-tight text-slate-900 sm:text-4xl">
                 Why I Started Traveling
               </h1>
@@ -92,54 +89,34 @@ const TravelerOffCode = () => {
             {/* Article Content */}
             <div className="space-y-6 text-[15px] leading-8 text-slate-600">
               <p>
-                I started traveling to different places because I often felt
-                bored and exhausted with my daily routine. As a website
-                developer, I spend most of my day sitting in front of a computer
-                screen.
+                I started traveling because I often felt bored and exhausted by
+                my daily routine as a website developer. Spending most of my
+                time in front of a computer made me realize that I needed a
+                break and wanted to experience the world beyond my workspace.
               </p>
 
               <p>
-                Over time, I began to feel that I needed to take a break from my
-                daily activities, step away from my monitor, and experience the
-                world beyond my workspace. That was when I developed the desire
-                to travel and explore new places.
+                Exploring nature has become one of the best ways for me to
+                refresh my mind. The sound of the wind, green trees, mountains,
+                and beaches give me a sense of peace and help me forget about
+                work and daily pressures.
               </p>
 
               <p>
-                For me, exploring nature has become one of the best ways to
-                refresh my mind after spending days working in front of a
-                computer. When I am surrounded by nature, I can temporarily
-                forget about work, pressure, and other problems.
+                Over time, I realized that every journey has its own story,
+                challenges, and unexpected moments. Some trips bring peace,
+                while others create unforgettable experiences.
               </p>
 
               <p>
-                The sound of the wind, the green trees, the atmosphere of the
-                mountains, and the beauty of the beach give me a sense of peace
-                that I cannot find while sitting in front of a computer screen.
+                Traveling is now more than just an escape from boredom. It is a
+                way for me to enjoy life, discover new experiences, and take a
+                break from my routine as a website developer.
               </p>
 
               <p>
-                I gradually began to realize that every journey has its own
-                story, challenges, and unique experiences. Some places bring a
-                sense of peace, while some journeys are full of challenges.
-              </p>
-
-              <p>
-                There are also unexpected moments that eventually become the
-                most memorable parts of the trip.
-              </p>
-
-              <p>
-                Since then, traveling has become more than just a way to escape
-                boredom. Exploring different places has become part of how I
-                enjoy life, discover new experiences, and take a break from my
-                daily routine as a website developer.
-              </p>
-
-              <p>
-                Every journey leaves behind a story, and through this blog, I
-                would like to share my experiences and the stories from the
-                places I have visited.
+                Through this blog, I would like to share the stories,
+                experiences, and memories from the places I have visited.
               </p>
             </div>
 
@@ -150,6 +127,114 @@ const TravelerOffCode = () => {
               </p>
             </div>
           </article>
+          {/* My Travler */}
+          <div className="mt-16 px-4 sm:px-6 lg:px-8">
+            {/* Section Header */}
+            <div className="mx-auto mb-12 max-w-3xl text-center">
+              <span className="text-sm font-semibold uppercase tracking-[0.3em] text-gray-400">
+                Travel Journal
+              </span>
+
+              <h1 className="mt-3 text-4xl font-bold tracking-tight text-gray-900 md:text-5xl">
+                My Travel Story
+              </h1>
+
+              <p className="mt-4 text-base leading-relaxed text-gray-500 md:text-lg">
+                A collection of places I have visited, stories I have
+                experienced, and moments I will always remember.
+              </p>
+            </div>
+
+            {/* Travel List */}
+            <ul className="mx-auto max-w-6xl space-y-10 md:space-y-16">
+              {myTravel.map((item, index) => (
+                <li
+                  key={item.id}
+                  className={`group flex flex-col overflow-hidden rounded-[2rem] border border-gray-100 bg-white shadow-sm transition-all duration-500 hover:-translate-y-1 hover:shadow-2xl md:flex-row ${
+                    index % 2 !== 0 ? "md:flex-row-reverse" : ""
+                  }`}
+                >
+                  {/* Image */}
+                  <div className="relative  w-full overflow-hidden  md:w-1/2">
+                    <img
+                      src={item.img}
+                      alt={item.title}
+                      loading="lazy"
+                      className="h-full w-full object-cover transition-transform duration-700 ease-out group-hover:scale-105"
+                    />
+
+                    {/* Dark Gradient */}
+                    <div className="absolute inset-0 bg-gradient-to-t from-black/60 via-black/10 to-transparent" />
+
+                    {/* Number */}
+                    <div className="absolute left-6 top-6 flex h-11 w-11 items-center justify-center rounded-full bg-white/90 text-sm font-bold text-gray-900 shadow-lg backdrop-blur-sm">
+                      {String(item.id).padStart(2, "0")}
+                    </div>
+
+                    {/* Image Bottom Label */}
+                    <div className="absolute bottom-6 left-6 right-6">
+                      <span className="text-sm font-medium text-white/80">
+                        Destination {String(item.id).padStart(2, "0")}
+                      </span>
+                    </div>
+                  </div>
+
+                  {/* Content */}
+                  <div
+                    className={clsx(
+                      isFullscreen ? " md:p-5 lg:p-8 w-[60%]" : "p-7 w-[50%]",
+                      "flex  flex-col justify-center",
+                    )}
+                  >
+                    <h2 className="text-2xl font-bold leading-tight tracking-tight text-gray-900 ">
+                      {item.title}
+                    </h2>
+
+                    <div className="my-6 h-px w-12 bg-gray-300" />
+
+                    <p className="text-base leading-7 text-gray-600 md:text-lg md:leading-8">
+                      {item.description}
+                    </p>
+
+                    {/* Button */}
+                    <div className="mt-8 flex justify-between items-center">
+                      <div
+                        className=" relative inline-block cursor-pointer font-semibold text-gray-700 after:absolute font-noto hover:text-green-700
+                after:left-0 after:-bottom-1 after:h-[2px] after:w-full after:origin-left after:scale-x-0 after:bg-green-700 after:transition-transform after:duration-300 after:ease-out hover:after:scale-x-100 "
+                      >
+                        <span>Detail Story</span>
+                      </div>
+                      <div>
+                        <a
+                          href={item.map}
+                          target="_blank"
+                          rel="noopener noreferrer"
+                          className="group/button inline-flex items-center gap-3 rounded-full bg-gray-900 px-6 py-3.5 text-sm font-semibold text-white transition-all duration-300 hover:bg-gray-700 hover:shadow-lg"
+                        >
+                          <span> Map</span>
+
+                          <svg
+                            xmlns="http://www.w3.org/2000/svg"
+                            fill="none"
+                            viewBox="0 0 24 24"
+                            strokeWidth={2}
+                            stroke="currentColor"
+                            className="h-5 w-5 transition-transform duration-300 group-hover/button:translate-x-1"
+                          >
+                            <path
+                              strokeLinecap="round"
+                              strokeLinejoin="round"
+                              d="M17.25 6.75L21 10.5m0 0l-3.75 3.75M21 10.5H3"
+                            />
+                          </svg>
+                        </a>
+                      </div>
+                    </div>
+                  </div>
+                </li>
+              ))}
+            </ul>
+          </div>
         </main>
 
         {/* RIGHT SIDEBAR */}

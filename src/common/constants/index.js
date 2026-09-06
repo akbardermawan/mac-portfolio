@@ -644,6 +644,62 @@ const navOffCode = [
   { id: 3, name: "Daily Life", windowKey: "dailyoffcode" },
 ];
 
+const myTravel = [
+  {
+    id: 1,
+    title: "Papuma Beach - Jember",
+    img: "/images/akbar-4.JPG",
+    map: "https://maps.app.goo.gl/ZvZ3htCefdXfqofT8",
+    description:
+      "Papuma Beach is one of the most popular coastal destinations in Jember, East Java. Located in Lojejer Village, Wuluhan District, the beach is known for its beautiful white sand, dramatic rock formations, and stunning natural scenery.",
+  },
+  {
+    id: 2,
+    title: "Tancak Waterfall - Jember",
+    img: "/images/akbar-6.JPG",
+    map: "https://maps.app.goo.gl/ov9XnNtwfh9CkgvM8",
+    description:
+      "Tancak Waterfall is one of Jember’s hidden gems and is known as the highest waterfall in Jember Regency, East Java. Located in Suci Village, Panti District, the waterfall is about 15–16 kilometers northwest of Jember city center.",
+  },
+  {
+    id: 3,
+    title: "Tumpak Sewu Waterfall - Lumajang",
+    img: "/images/akbar-2.JPG",
+    map: "https://maps.app.goo.gl/oPEZjthP4JGcbaB6A",
+    description:
+      "Tumpak Sewu Waterfall is one of the most breathtaking waterfalls in Indonesia. Located in Sidomulyo Tourism Village, Pronojiwo District, Lumajang Regency, East Java, it sits on the border between Lumajang and Malang.",
+  },
+];
+
+const myDaily = [
+  {
+    id: 1,
+    title: "Gardening",
+    img: "/images/dekstop/akbar-12.JPG",
+
+    description:
+      "I enjoy spending time in the garden, taking care of plants, and appreciating the simple and peaceful moments of rural life.",
+  },
+
+  {
+    id: 2,
+    title: "Fishing",
+    img: "/images/dekstop/akbar-13.jpg",
+
+    description:
+      "Fishing gives me a chance to slow down, enjoy the peaceful surroundings, and take a break from my daily routine.",
+  },
+
+  {
+    id: 3,
+    title: "Enjoying Life with Friends",
+    img: "/images/dekstop/akbar-14.jpg",
+
+    description:
+      "Spending time with friends, sharing stories, and enjoying simple moments together is one of the things I value most.",
+  },
+];
+
 export {
   dockApps,
   INITIAL_Z_INDEX,
@@ -666,4 +722,6 @@ export {
   navVisualStudio,
   visualStudioProject,
   navOffCode,
+  myTravel,
+  myDaily,
 };
