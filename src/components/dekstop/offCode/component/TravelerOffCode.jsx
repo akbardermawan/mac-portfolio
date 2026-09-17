@@ -5,6 +5,7 @@ import { myTravel } from "../../../../common/constants";
 // redux
 import { useSelector, useDispatch } from "react-redux";
 import FooterOffCode from "./FooterOffCode";
+import AccordionGallery from "./AccordionGallery";
 
 const TravelerOffCode = () => {
   //Window Fullscrenn -> state redux
@@ -73,6 +74,11 @@ const TravelerOffCode = () => {
             isFullscreen ? "md:w-[60%] xl:w-[60%]" : "w-full",
           )}
         >
+          {/* Hero */}
+          <div className="w-full mb-5">
+            <AccordionGallery />
+          </div>
+          {/* articel */}
           <article className="rounded-2xl border border-slate-200 bg-white px-6 py-8 shadow-sm sm:px-8 lg:px-10">
             {/* Article Header */}
             <header className="mb-8 border-b border-slate-100 pb-6">

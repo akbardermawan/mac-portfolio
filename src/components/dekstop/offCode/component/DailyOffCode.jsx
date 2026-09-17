@@ -22,51 +22,34 @@ const DailyOffCode = () => {
         <main className={clsx("min-w-0", isFullscreen ? "" : "", "w-[60%]")}>
           <article className="rounded-2xl border border-slate-200 bg-white px-6 py-8 shadow-sm sm:px-8 lg:px-10">
             <div className="mb-5">
-              <span className="text-xs font-semibold uppercase tracking-wider text-amber-600">
+              <span className="text-xl font-semibold uppercase tracking-wider text-amber-600">
                 My daily routine lately
               </span>
             </div>
             <div>
               {/* Travel List */}
-              <ul className="mx-auto max-w-6xl">
-                {myDaily.map((item, index) => (
-                  <li
-                    key={item.id}
-                    className={`my-2 group flex flex-col overflow-hidden border border-gray-100 bg-white shadow-sm transition-all duration-500 hover:-translate-y-1 hover:shadow-2xl md:flex-row ${
-                      index % 2 !== 0 ? "" : ""
-                    }`}
-                  >
+              <ul className="mx-auto max-w-6xl space-y-10">
+                {myDaily.map((item) => (
+                  <li key={item.id} className="group relative">
                     {/* Image */}
-                    <div className="relative  w-full overflow-hidden  md:w-1/2">
+                    <div className="relative h-[420px] overflow-hidden rounded-3xl md:h-[520px]">
                       <img
                         src={item.img}
                         alt={item.title}
                         loading="lazy"
-                        className="h-full w-full object-cover transition-transform duration-700 ease-out group-hover:scale-105"
+                        className="h-full w-full object-cover transition duration-700 group-hover:scale-105"
                       />
 
-                      {/* Dark Gradient */}
-                      <div className="absolute inset-0 bg-gradient-to-t from-black/60 via-black/10 to-transparent" />
+                      <div className="absolute inset-0 bg-gradient-to-t from-black/60 via-transparent to-transparent" />
                     </div>
 
-                    {/* Content */}
-                    <div
-                      className={clsx(
-                        isFullscreen ? " md:p-5 lg:p-8 w-[60%]" : "p-7 w-[50%]",
-                        "flex  flex-col justify-center",
-                      )}
-                    >
-                      <h2 className="text-xl font-bold leading-tight tracking-tight text-gray-900 ">
+                    {/* Floating Content */}
+                    <div className="relative mx-4 -mt-24 rounded-2xl bg-white p-6 shadow-xl md:mx-10 md:p-8">
+                      <h2 className="mt-2 text-2xl font-bold text-gray-900 md:text-3xl">
                         {item.title}
                       </h2>
-                      <p
-                        className={clsx(
-                          isFullscreen ? "hidden xl:flex" : "hidden",
-                          "mt-3 text-base leading-7 text-gray-600 md:text-lg md:leading-8",
-                        )}
-                      >
-                        {item.description}
-                      </p>
+
+                      <p className="mt-3 text-gray-600">{item.description}</p>
                     </div>
                   </li>
                 ))}
